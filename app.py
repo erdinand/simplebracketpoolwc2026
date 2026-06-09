@@ -80,13 +80,13 @@ def generate_leaderboard():
             participant_data = parse_bolao_pdf(full_path)
             points = calculate_points(OFFICIAL_RESULTS, participant_data["guesses"])
             leaderboard_data.append({
-                "Name": participant_data["name"],
-                "Total Points": points
+                "Nome": participant_data["name"],
+                "Total de Pontos": points
             })
             
     df = pd.DataFrame(leaderboard_data)
     if not df.empty:
-        df = df.sort_values(by="Total Points", ascending=False).reset_index(drop=True)
+        df = df.sort_values(by="Total de Pontos", ascending=False).reset_index(drop=True)
         df.index += 1 
         df.index.name = "Rank"
     return df
@@ -97,10 +97,10 @@ def generate_leaderboard():
 st.title("🏆 Bolão da Copa do Mundo 2026")
 
 # Leaderboard Zone
-st.subheader("📊 Live Ranking")
+st.subheader("📊 Classificação")
 df_leaderboard = generate_leaderboard()
 
 if not df_leaderboard.empty:
     st.dataframe(df_leaderboard, use_container_width=True)
 else:
-    st.write("No predictions have been submitted yet. Be the first!")
+    st.write("Os palpites ainda não foram submetidos. Data limite: 11/06/2026 13:00.")
