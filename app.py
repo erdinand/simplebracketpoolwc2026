@@ -96,32 +96,6 @@ def generate_leaderboard():
 # ==========================================
 st.title("🏆 Bolão da Copa do Mundo 2026")
 
-current_time = datetime.now(timezone.utc)
-
-# Upload Zone Logic
-if current_time < DEADLINE:
-    st.info("⏳ **Uploads close on:** June 11, 2026 at 12:00 PM UTC.")
-    uploaded_file = st.file_uploader("Upload your filled PDF here:", type="pdf")
-    
-    if uploaded_file is not None:
-        # Save file temporarily to parse the user's name
-        temp_path = os.path.join(SUBMISSIONS_DIR, "temp.pdf")
-        with open(temp_path, "wb") as f:
-            f.write(uploaded_file.getbuffer())
-            
-        data = parse_bolao_pdf(temp_path)
-        safe_name = str(data["name"]).replace(" ", "_").replace("/", "").strip()
-        
-        # Rename file to the participant's name to prevent duplicates
-        final_path = os.path.join(SUBMISSIONS_DIR, f"{safe_name}.pdf")
-        os.replace(temp_path, final_path)
-        
-        st.success(f"✅ PDF received for **{data['name']}**! Your guesses are saved.")
-else:
-    st.error("🔒 **Submissions are now closed!** Enjoy the tournament!")
-
-st.divider()
-
 # Leaderboard Zone
 st.subheader("📊 Live Ranking")
 df_leaderboard = generate_leaderboard()

@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+@page {
+    size: A4 portrait;
+    margin: 15mm 12mm;
+    background-color: #f4f7f6;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+}
+.header {
+    text-align: center;
+    background-color: #005541;
+    color: white;
+    padding: 20px 10px;
+    margin: -15mm -12mm 20px -12mm;
+    border-bottom: 6px solid #ffcc00;
+}
+.header h1 {
+    margin: 0;
+    font-size: 26pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.header p {
+    margin: 5px 0 0 0;
+    font-size: 13pt;
+    font-weight: 300;
+}
+.participant-info {
+    width: 100%;
+    margin-bottom: 20px;
+    background: white;
+    border: 1px solid #dcdcdc;
+    padding: 15px;
+    border-radius: 8px;
+    border-collapse: collapse;
+}
+.participant-info td {
+    font-size: 12pt;
+    vertical-align: middle;
+}
+.name-input, .contact-input {
+    border: none;
+    border-bottom: 1px solid #666;
+    font-size: 12pt;
+    background: transparent;
+    padding: 2px 5px;
+}
+.groups-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 15px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+.groups-table td.card-cell {
+    width: 50%;
+    vertical-align: top;
+    padding: 0;
+}
+.group-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.group-title {
+    background: #005541;
+    color: #ffcc00;
+    text-align: center;
+    padding: 8px;
+    font-size: 15pt;
+    font-weight: bold;
+    border-bottom: 1px solid #004030;
+}
+.matches-table {
+    width: 100%;
+    font-size: 11pt;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+.matches-table td {
+    padding: 7px 5px;
+    vertical-align: middle;
+}
+.team-left {
+    text-align: right;
+    width: 38%;
+    font-weight: bold;
+    color: #333;
+}
+.team-right {
+    text-align: left;
+    width: 38%;
+    font-weight: bold;
+    color: #333;
+}
+.score-cell {
+    text-align: center;
+    width: 8%;
+}
+.score-input {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    background: #fafafa;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #000;
+}
+.vs {
+    text-align: center;
+    width: 8%;
+    color: #888;
+    font-size: 10pt;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Bolão da Copa do Mundo 2026</h1>
+    <p>Fase de Grupos - Palpites</p>
+</div>
+
+<form>  
+<table class="participant-info">
+    <tr>
+        <td style="width: 60%;"><b>Nome:</b> <input type="text" class="name-input" style="width: 75%;" name="participant_name"></td>
+        <td style="width: 40%;"><b>Contato:</b> <input type="text" class="contact-input" style="width: 60%;" name="participant_contact"></td>
+    </tr>
+</table>
+
+<table class="groups-table">
+<tr style="page-break-inside: avoid;">
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo A</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">México</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m1_t2" maxlength="2"></td>
+                    <td class="team-right">África do Sul</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Coreia do Sul</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Rep. Tcheca</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">México</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Coreia do Sul</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Rep. Tcheca</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m4_t2" maxlength="2"></td>
+                    <td class="team-right">África do Sul</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">México</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Rep. Tcheca</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">África do Sul</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_A_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Coreia do Sul</td>
+                </tr>
+                </table>
+</div>
+</td>
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo B</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Canadá</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Bósnia e Herzegovina</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Catar</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Suíça</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Canadá</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Catar</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Suíça</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Bósnia e Herzegovina</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Canadá</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Suíça</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Bósnia e Herzegovina</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_B_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Catar</td>
+                </tr>
+                </table>
+</div>
+</td>
+</tr>
+<tr style="page-break-inside: avoid;">
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo C</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Brasil</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Marrocos</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Haiti</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Escócia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Brasil</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Haiti</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Escócia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Marrocos</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Brasil</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Escócia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Marrocos</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_C_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Haiti</td>
+                </tr>
+                </table>
+</div>
+</td>
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo D</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Estados Unidos</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Paraguai</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Austrália</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Turquia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Estados Unidos</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Austrália</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Turquia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Paraguai</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Estados Unidos</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Turquia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Paraguai</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_D_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Austrália</td>
+                </tr>
+                </table>
+</div>
+</td>
+</tr>
+<tr style="page-break-inside: avoid;">
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo E</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Alemanha</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Curaçao</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Costa do Marfim</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Equador</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Alemanha</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Costa do Marfim</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Equador</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Curaçao</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Alemanha</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Equador</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Curaçao</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_E_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Costa do Marfim</td>
+                </tr>
+                </table>
+</div>
+</td>
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo F</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Holanda</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Japão</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Suécia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Tunísia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Holanda</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Suécia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Tunísia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Japão</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Holanda</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Tunísia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Japão</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_F_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Suécia</td>
+                </tr>
+                </table>
+</div>
+</td>
+</tr>
+<tr style="page-break-inside: avoid;">
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo G</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Bélgica</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Egito</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Irã</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Nova Zelândia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Bélgica</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Irã</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Nova Zelândia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Egito</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Bélgica</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Nova Zelândia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Egito</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_G_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Irã</td>
+                </tr>
+                </table>
+</div>
+</td>
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo H</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Espanha</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Cabo Verde</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Arábia Saudita</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Uruguai</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Espanha</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Arábia Saudita</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Uruguai</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Cabo Verde</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Espanha</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Uruguai</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Cabo Verde</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_H_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Arábia Saudita</td>
+                </tr>
+                </table>
+</div>
+</td>
+</tr>
+<tr style="page-break-inside: avoid;">
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo I</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">França</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Senegal</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Iraque</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Noruega</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">França</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Iraque</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Noruega</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Senegal</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">França</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Noruega</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Senegal</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_I_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Iraque</td>
+                </tr>
+                </table>
+</div>
+</td>
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo J</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Argentina</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Argélia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Áustria</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Jordânia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Argentina</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Áustria</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Jordânia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Argélia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Argentina</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Jordânia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Argélia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_J_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Áustria</td>
+                </tr>
+                </table>
+</div>
+</td>
+</tr>
+<tr style="page-break-inside: avoid;">
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo K</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Portugal</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m1_t2" maxlength="2"></td>
+                    <td class="team-right">RD Congo</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Uzbequistão</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Colômbia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Portugal</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Uzbequistão</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Colômbia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m4_t2" maxlength="2"></td>
+                    <td class="team-right">RD Congo</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Portugal</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Colômbia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">RD Congo</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_K_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Uzbequistão</td>
+                </tr>
+                </table>
+</div>
+</td>
+<td class="card-cell">
+<div class="group-card">
+<div class="group-title">Grupo L</div>
+<table class="matches-table">
+
+                <tr>
+                    <td class="team-left">Inglaterra</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m1_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m1_t2" maxlength="2"></td>
+                    <td class="team-right">Croácia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Gana</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m2_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m2_t2" maxlength="2"></td>
+                    <td class="team-right">Panamá</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Inglaterra</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m3_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m3_t2" maxlength="2"></td>
+                    <td class="team-right">Gana</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Panamá</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m4_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m4_t2" maxlength="2"></td>
+                    <td class="team-right">Croácia</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Inglaterra</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m5_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m5_t2" maxlength="2"></td>
+                    <td class="team-right">Panamá</td>
+                </tr>
+                
+                <tr>
+                    <td class="team-left">Croácia</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m6_t1" maxlength="2"></td>
+                    <td class="vs">x</td>
+                    <td class="score-cell"><input type="text" class="score-input" name="Grupo_L_m6_t2" maxlength="2"></td>
+                    <td class="team-right">Gana</td>
+                </tr>
+                </table>
+</div>
+</td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
