@@ -49,14 +49,16 @@
                 "name": "Mexico",
                 "shortName": "Mexico",
                 "tla": "MEX",
-                "crest": "https://crests.football-data.org/769.svg"
+                "crest": "https://crests.football-data.org/769.svg",
+                "name_pt": "México"
             },
             "awayTeam": {
                 "id": 774,
                 "name": "South Africa",
                 "shortName": "South Africa",
                 "tla": "RSA",
-                "crest": "https://crests.football-data.org/9396.svg"
+                "crest": "https://crests.football-data.org/9396.svg",
+                "name_pt": "África do Sul"
             },
             "score": {
                 "winner": null,
@@ -73,7 +75,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_A_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -108,14 +115,16 @@
                 "name": "South Korea",
                 "shortName": "Korea Republic",
                 "tla": "KOR",
-                "crest": "https://crests.football-data.org/772.png"
+                "crest": "https://crests.football-data.org/772.png",
+                "name_pt": "Coreia do Sul"
             },
             "awayTeam": {
                 "id": 798,
                 "name": "Czechia",
                 "shortName": "Czechia",
                 "tla": "CZE",
-                "crest": "https://crests.football-data.org/798.svg"
+                "crest": "https://crests.football-data.org/798.svg",
+                "name_pt": "Rep. Tcheca"
             },
             "score": {
                 "winner": null,
@@ -132,7 +141,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_A_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -167,14 +181,16 @@
                 "name": "Canada",
                 "shortName": "Canada",
                 "tla": "CAN",
-                "crest": "https://crests.football-data.org/canada.svg"
+                "crest": "https://crests.football-data.org/canada.svg",
+                "name_pt": "Canadá"
             },
             "awayTeam": {
                 "id": 1060,
                 "name": "Bosnia-Herzegovina",
                 "shortName": "Bosnia-H.",
                 "tla": "BIH",
-                "crest": "https://crests.football-data.org/bosnia.svg"
+                "crest": "https://crests.football-data.org/bosnia.svg",
+                "name_pt": "Bósnia e Herzegovina"
             },
             "score": {
                 "winner": null,
@@ -191,7 +207,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_B_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -226,14 +247,16 @@
                 "name": "United States",
                 "shortName": "USA",
                 "tla": "USA",
-                "crest": "https://crests.football-data.org/usa.svg"
+                "crest": "https://crests.football-data.org/usa.svg",
+                "name_pt": "Estados Unidos"
             },
             "awayTeam": {
                 "id": 761,
                 "name": "Paraguay",
                 "shortName": "Paraguay",
                 "tla": "PAR",
-                "crest": "https://crests.football-data.org/761.svg"
+                "crest": "https://crests.football-data.org/761.svg",
+                "name_pt": "Paraguai"
             },
             "score": {
                 "winner": null,
@@ -250,7 +273,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_D_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -285,14 +313,16 @@
                 "name": "Qatar",
                 "shortName": "Qatar",
                 "tla": "QAT",
-                "crest": "https://crests.football-data.org/8030.svg"
+                "crest": "https://crests.football-data.org/8030.svg",
+                "name_pt": "Catar"
             },
             "awayTeam": {
                 "id": 788,
                 "name": "Switzerland",
                 "shortName": "Switzerland",
                 "tla": "SUI",
-                "crest": "https://crests.football-data.org/788.svg"
+                "crest": "https://crests.football-data.org/788.svg",
+                "name_pt": "Suíça"
             },
             "score": {
                 "winner": null,
@@ -309,7 +339,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_B_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -344,14 +379,16 @@
                 "name": "Brazil",
                 "shortName": "Brazil",
                 "tla": "BRA",
-                "crest": "https://crests.football-data.org/764.svg"
+                "crest": "https://crests.football-data.org/764.svg",
+                "name_pt": "Brasil"
             },
             "awayTeam": {
                 "id": 815,
                 "name": "Morocco",
                 "shortName": "Morocco",
                 "tla": "MAR",
-                "crest": "https://crests.football-data.org/morocco.svg"
+                "crest": "https://crests.football-data.org/morocco.svg",
+                "name_pt": "Marrocos"
             },
             "score": {
                 "winner": null,
@@ -368,7 +405,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_C_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -403,14 +445,16 @@
                 "name": "Haiti",
                 "shortName": "Haiti",
                 "tla": "HAI",
-                "crest": "https://crests.football-data.org/haiti.svg"
+                "crest": "https://crests.football-data.org/haiti.svg",
+                "name_pt": "Haiti"
             },
             "awayTeam": {
                 "id": 8873,
                 "name": "Scotland",
                 "shortName": "Scotland",
                 "tla": "SCO",
-                "crest": "https://crests.football-data.org/814.svg"
+                "crest": "https://crests.football-data.org/814.svg",
+                "name_pt": "Escócia"
             },
             "score": {
                 "winner": null,
@@ -427,7 +471,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_C_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -462,14 +511,16 @@
                 "name": "Australia",
                 "shortName": "Australia",
                 "tla": "AUS",
-                "crest": "https://crests.football-data.org/779.svg"
+                "crest": "https://crests.football-data.org/779.svg",
+                "name_pt": "Austrália"
             },
             "awayTeam": {
                 "id": 803,
                 "name": "Turkey",
                 "shortName": "Turkey",
                 "tla": "TUR",
-                "crest": "https://crests.football-data.org/803.svg"
+                "crest": "https://crests.football-data.org/803.svg",
+                "name_pt": "Turquia"
             },
             "score": {
                 "winner": null,
@@ -486,7 +537,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_D_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -521,14 +577,16 @@
                 "name": "Germany",
                 "shortName": "Germany",
                 "tla": "GER",
-                "crest": "https://crests.football-data.org/759.svg"
+                "crest": "https://crests.football-data.org/759.svg",
+                "name_pt": "Alemanha"
             },
             "awayTeam": {
                 "id": 9460,
                 "name": "Curaçao",
                 "shortName": "Curaçao",
                 "tla": "CUR",
-                "crest": "https://crests.football-data.org/curacao.svg"
+                "crest": "https://crests.football-data.org/curacao.svg",
+                "name_pt": "Curaçao"
             },
             "score": {
                 "winner": null,
@@ -545,7 +603,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_E_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -580,14 +643,16 @@
                 "name": "Netherlands",
                 "shortName": "Netherlands",
                 "tla": "NED",
-                "crest": "https://crests.football-data.org/8601.svg"
+                "crest": "https://crests.football-data.org/8601.svg",
+                "name_pt": "Holanda"
             },
             "awayTeam": {
                 "id": 766,
                 "name": "Japan",
                 "shortName": "Japan",
                 "tla": "JPN",
-                "crest": "https://crests.football-data.org/766.svg"
+                "crest": "https://crests.football-data.org/766.svg",
+                "name_pt": "Japão"
             },
             "score": {
                 "winner": null,
@@ -604,7 +669,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_F_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -639,14 +709,16 @@
                 "name": "Ivory Coast",
                 "shortName": "Ivory Coast",
                 "tla": "CIV",
-                "crest": "https://crests.football-data.org/787.svg"
+                "crest": "https://crests.football-data.org/787.svg",
+                "name_pt": "Costa do Marfim"
             },
             "awayTeam": {
                 "id": 791,
                 "name": "Ecuador",
                 "shortName": "Ecuador",
                 "tla": "ECU",
-                "crest": "https://crests.football-data.org/791.svg"
+                "crest": "https://crests.football-data.org/791.svg",
+                "name_pt": "Equador"
             },
             "score": {
                 "winner": null,
@@ -663,7 +735,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_E_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -698,14 +775,16 @@
                 "name": "Sweden",
                 "shortName": "Sweden",
                 "tla": "SWE",
-                "crest": "https://crests.football-data.org/792.svg"
+                "crest": "https://crests.football-data.org/792.svg",
+                "name_pt": "Suécia"
             },
             "awayTeam": {
                 "id": 802,
                 "name": "Tunisia",
                 "shortName": "Tunisia",
                 "tla": "TUN",
-                "crest": "https://crests.football-data.org/tunisia.svg"
+                "crest": "https://crests.football-data.org/tunisia.svg",
+                "name_pt": "Tunísia"
             },
             "score": {
                 "winner": null,
@@ -722,7 +801,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_F_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -757,14 +841,16 @@
                 "name": "Spain",
                 "shortName": "Spain",
                 "tla": "ESP",
-                "crest": "https://crests.football-data.org/760.svg"
+                "crest": "https://crests.football-data.org/760.svg",
+                "name_pt": "Espanha"
             },
             "awayTeam": {
                 "id": 1930,
                 "name": "Cape Verde Islands",
                 "shortName": "Cape Verde",
                 "tla": "CPV",
-                "crest": "https://crests.football-data.org/cape_verde.svg"
+                "crest": "https://crests.football-data.org/cape_verde.svg",
+                "name_pt": "Cabo Verde"
             },
             "score": {
                 "winner": null,
@@ -781,7 +867,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_H_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -816,14 +907,16 @@
                 "name": "Belgium",
                 "shortName": "Belgium",
                 "tla": "BEL",
-                "crest": "https://crests.football-data.org/805.svg"
+                "crest": "https://crests.football-data.org/805.svg",
+                "name_pt": "Bélgica"
             },
             "awayTeam": {
                 "id": 825,
                 "name": "Egypt",
                 "shortName": "Egypt",
                 "tla": "EGY",
-                "crest": "https://crests.football-data.org/825.svg"
+                "crest": "https://crests.football-data.org/825.svg",
+                "name_pt": "Egito"
             },
             "score": {
                 "winner": null,
@@ -840,7 +933,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_G_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -875,14 +973,16 @@
                 "name": "Saudi Arabia",
                 "shortName": "Saudi Arabia",
                 "tla": "KSA",
-                "crest": "https://crests.football-data.org/saudi_arabia.svg"
+                "crest": "https://crests.football-data.org/saudi_arabia.svg",
+                "name_pt": "Arábia Saudita"
             },
             "awayTeam": {
                 "id": 758,
                 "name": "Uruguay",
                 "shortName": "Uruguay",
                 "tla": "URY",
-                "crest": "https://crests.football-data.org/758.svg"
+                "crest": "https://crests.football-data.org/758.svg",
+                "name_pt": "Uruguai"
             },
             "score": {
                 "winner": null,
@@ -899,7 +999,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_H_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -934,14 +1039,16 @@
                 "name": "Iran",
                 "shortName": "Iran",
                 "tla": "IRN",
-                "crest": "https://crests.football-data.org/iran.svg"
+                "crest": "https://crests.football-data.org/iran.svg",
+                "name_pt": "Irã"
             },
             "awayTeam": {
                 "id": 783,
                 "name": "New Zealand",
                 "shortName": "New Zealand",
                 "tla": "NZL",
-                "crest": "https://crests.football-data.org/783.svg"
+                "crest": "https://crests.football-data.org/783.svg",
+                "name_pt": "Nova Zelândia"
             },
             "score": {
                 "winner": null,
@@ -958,7 +1065,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_G_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -993,14 +1105,16 @@
                 "name": "France",
                 "shortName": "France",
                 "tla": "FRA",
-                "crest": "https://crests.football-data.org/773.svg"
+                "crest": "https://crests.football-data.org/773.svg",
+                "name_pt": "França"
             },
             "awayTeam": {
                 "id": 804,
                 "name": "Senegal",
                 "shortName": "Senegal",
                 "tla": "SEN",
-                "crest": "https://crests.football-data.org/senegal.svg"
+                "crest": "https://crests.football-data.org/senegal.svg",
+                "name_pt": "Senegal"
             },
             "score": {
                 "winner": null,
@@ -1017,7 +1131,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_I_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1052,14 +1171,16 @@
                 "name": "Iraq",
                 "shortName": "Iraq",
                 "tla": "IRQ",
-                "crest": "https://crests.football-data.org/iraq.svg"
+                "crest": "https://crests.football-data.org/iraq.svg",
+                "name_pt": "Iraque"
             },
             "awayTeam": {
                 "id": 8872,
                 "name": "Norway",
                 "shortName": "Norway",
                 "tla": "NOR",
-                "crest": "https://crests.football-data.org/813.svg"
+                "crest": "https://crests.football-data.org/813.svg",
+                "name_pt": "Noruega"
             },
             "score": {
                 "winner": null,
@@ -1076,7 +1197,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_I_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1111,14 +1237,16 @@
                 "name": "Argentina",
                 "shortName": "Argentina",
                 "tla": "ARG",
-                "crest": "https://crests.football-data.org/762.png"
+                "crest": "https://crests.football-data.org/762.png",
+                "name_pt": "Argentina"
             },
             "awayTeam": {
                 "id": 778,
                 "name": "Algeria",
                 "shortName": "Algeria",
                 "tla": "ALG",
-                "crest": "https://crests.football-data.org/algeria.svg"
+                "crest": "https://crests.football-data.org/algeria.svg",
+                "name_pt": "Argélia"
             },
             "score": {
                 "winner": null,
@@ -1135,7 +1263,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_J_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1170,14 +1303,16 @@
                 "name": "Austria",
                 "shortName": "Austria",
                 "tla": "AUT",
-                "crest": "https://crests.football-data.org/816.svg"
+                "crest": "https://crests.football-data.org/816.svg",
+                "name_pt": "Áustria"
             },
             "awayTeam": {
                 "id": 8049,
                 "name": "Jordan",
                 "shortName": "Jordan",
                 "tla": "JOR",
-                "crest": "https://crests.football-data.org/8049.png"
+                "crest": "https://crests.football-data.org/8049.png",
+                "name_pt": "Jordânia"
             },
             "score": {
                 "winner": null,
@@ -1194,7 +1329,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_J_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1229,14 +1369,16 @@
                 "name": "Portugal",
                 "shortName": "Portugal",
                 "tla": "POR",
-                "crest": "https://crests.football-data.org/765.svg"
+                "crest": "https://crests.football-data.org/765.svg",
+                "name_pt": "Portugal"
             },
             "awayTeam": {
                 "id": 1934,
                 "name": "Congo DR",
                 "shortName": "Congo DR",
                 "tla": "COD",
-                "crest": "https://crests.football-data.org/congo_dr.svg"
+                "crest": "https://crests.football-data.org/congo_dr.svg",
+                "name_pt": "RD Congo"
             },
             "score": {
                 "winner": null,
@@ -1253,7 +1395,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_K_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1288,14 +1435,16 @@
                 "name": "England",
                 "shortName": "England",
                 "tla": "ENG",
-                "crest": "https://crests.football-data.org/770.svg"
+                "crest": "https://crests.football-data.org/770.svg",
+                "name_pt": "Inglaterra"
             },
             "awayTeam": {
                 "id": 799,
                 "name": "Croatia",
                 "shortName": "Croatia",
                 "tla": "CRO",
-                "crest": "https://crests.football-data.org/799.svg"
+                "crest": "https://crests.football-data.org/799.svg",
+                "name_pt": "Croácia"
             },
             "score": {
                 "winner": null,
@@ -1312,7 +1461,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_L_m1",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1347,14 +1501,16 @@
                 "name": "Ghana",
                 "shortName": "Ghana",
                 "tla": "GHA",
-                "crest": "https://crests.football-data.org/ghana.svg"
+                "crest": "https://crests.football-data.org/ghana.svg",
+                "name_pt": "Gana"
             },
             "awayTeam": {
                 "id": 1836,
                 "name": "Panama",
                 "shortName": "Panama",
                 "tla": "PAN",
-                "crest": "https://crests.football-data.org/panama.svg"
+                "crest": "https://crests.football-data.org/panama.svg",
+                "name_pt": "Panamá"
             },
             "score": {
                 "winner": null,
@@ -1371,7 +1527,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_L_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1406,14 +1567,16 @@
                 "name": "Uzbekistan",
                 "shortName": "Uzbekistan",
                 "tla": "UZB",
-                "crest": "https://crests.football-data.org/8070.png"
+                "crest": "https://crests.football-data.org/8070.png",
+                "name_pt": "Uzbequistão"
             },
             "awayTeam": {
                 "id": 818,
                 "name": "Colombia",
                 "shortName": "Colombia",
                 "tla": "COL",
-                "crest": "https://crests.football-data.org/818.svg"
+                "crest": "https://crests.football-data.org/818.svg",
+                "name_pt": "Colômbia"
             },
             "score": {
                 "winner": null,
@@ -1430,7 +1593,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_K_m2",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1465,14 +1633,16 @@
                 "name": "Czechia",
                 "shortName": "Czechia",
                 "tla": "CZE",
-                "crest": "https://crests.football-data.org/798.svg"
+                "crest": "https://crests.football-data.org/798.svg",
+                "name_pt": "Rep. Tcheca"
             },
             "awayTeam": {
                 "id": 774,
                 "name": "South Africa",
                 "shortName": "South Africa",
                 "tla": "RSA",
-                "crest": "https://crests.football-data.org/9396.svg"
+                "crest": "https://crests.football-data.org/9396.svg",
+                "name_pt": "África do Sul"
             },
             "score": {
                 "winner": null,
@@ -1489,7 +1659,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_A_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1524,14 +1699,16 @@
                 "name": "Switzerland",
                 "shortName": "Switzerland",
                 "tla": "SUI",
-                "crest": "https://crests.football-data.org/788.svg"
+                "crest": "https://crests.football-data.org/788.svg",
+                "name_pt": "Suíça"
             },
             "awayTeam": {
                 "id": 1060,
                 "name": "Bosnia-Herzegovina",
                 "shortName": "Bosnia-H.",
                 "tla": "BIH",
-                "crest": "https://crests.football-data.org/bosnia.svg"
+                "crest": "https://crests.football-data.org/bosnia.svg",
+                "name_pt": "Bósnia e Herzegovina"
             },
             "score": {
                 "winner": null,
@@ -1548,7 +1725,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_B_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1583,14 +1765,16 @@
                 "name": "Canada",
                 "shortName": "Canada",
                 "tla": "CAN",
-                "crest": "https://crests.football-data.org/canada.svg"
+                "crest": "https://crests.football-data.org/canada.svg",
+                "name_pt": "Canadá"
             },
             "awayTeam": {
                 "id": 8030,
                 "name": "Qatar",
                 "shortName": "Qatar",
                 "tla": "QAT",
-                "crest": "https://crests.football-data.org/8030.svg"
+                "crest": "https://crests.football-data.org/8030.svg",
+                "name_pt": "Catar"
             },
             "score": {
                 "winner": null,
@@ -1607,7 +1791,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_B_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1642,14 +1831,16 @@
                 "name": "Mexico",
                 "shortName": "Mexico",
                 "tla": "MEX",
-                "crest": "https://crests.football-data.org/769.svg"
+                "crest": "https://crests.football-data.org/769.svg",
+                "name_pt": "México"
             },
             "awayTeam": {
                 "id": 772,
                 "name": "South Korea",
                 "shortName": "Korea Republic",
                 "tla": "KOR",
-                "crest": "https://crests.football-data.org/772.png"
+                "crest": "https://crests.football-data.org/772.png",
+                "name_pt": "Coreia do Sul"
             },
             "score": {
                 "winner": null,
@@ -1666,7 +1857,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_A_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1701,14 +1897,16 @@
                 "name": "United States",
                 "shortName": "USA",
                 "tla": "USA",
-                "crest": "https://crests.football-data.org/usa.svg"
+                "crest": "https://crests.football-data.org/usa.svg",
+                "name_pt": "Estados Unidos"
             },
             "awayTeam": {
                 "id": 779,
                 "name": "Australia",
                 "shortName": "Australia",
                 "tla": "AUS",
-                "crest": "https://crests.football-data.org/779.svg"
+                "crest": "https://crests.football-data.org/779.svg",
+                "name_pt": "Austrália"
             },
             "score": {
                 "winner": null,
@@ -1725,7 +1923,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_D_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1760,14 +1963,16 @@
                 "name": "Scotland",
                 "shortName": "Scotland",
                 "tla": "SCO",
-                "crest": "https://crests.football-data.org/814.svg"
+                "crest": "https://crests.football-data.org/814.svg",
+                "name_pt": "Escócia"
             },
             "awayTeam": {
                 "id": 815,
                 "name": "Morocco",
                 "shortName": "Morocco",
                 "tla": "MAR",
-                "crest": "https://crests.football-data.org/morocco.svg"
+                "crest": "https://crests.football-data.org/morocco.svg",
+                "name_pt": "Marrocos"
             },
             "score": {
                 "winner": null,
@@ -1784,7 +1989,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_C_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1819,14 +2029,16 @@
                 "name": "Brazil",
                 "shortName": "Brazil",
                 "tla": "BRA",
-                "crest": "https://crests.football-data.org/764.svg"
+                "crest": "https://crests.football-data.org/764.svg",
+                "name_pt": "Brasil"
             },
             "awayTeam": {
                 "id": 836,
                 "name": "Haiti",
                 "shortName": "Haiti",
                 "tla": "HAI",
-                "crest": "https://crests.football-data.org/haiti.svg"
+                "crest": "https://crests.football-data.org/haiti.svg",
+                "name_pt": "Haiti"
             },
             "score": {
                 "winner": null,
@@ -1843,7 +2055,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_C_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1878,14 +2095,16 @@
                 "name": "Turkey",
                 "shortName": "Turkey",
                 "tla": "TUR",
-                "crest": "https://crests.football-data.org/803.svg"
+                "crest": "https://crests.football-data.org/803.svg",
+                "name_pt": "Turquia"
             },
             "awayTeam": {
                 "id": 761,
                 "name": "Paraguay",
                 "shortName": "Paraguay",
                 "tla": "PAR",
-                "crest": "https://crests.football-data.org/761.svg"
+                "crest": "https://crests.football-data.org/761.svg",
+                "name_pt": "Paraguai"
             },
             "score": {
                 "winner": null,
@@ -1902,7 +2121,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_D_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1937,14 +2161,16 @@
                 "name": "Netherlands",
                 "shortName": "Netherlands",
                 "tla": "NED",
-                "crest": "https://crests.football-data.org/8601.svg"
+                "crest": "https://crests.football-data.org/8601.svg",
+                "name_pt": "Holanda"
             },
             "awayTeam": {
                 "id": 792,
                 "name": "Sweden",
                 "shortName": "Sweden",
                 "tla": "SWE",
-                "crest": "https://crests.football-data.org/792.svg"
+                "crest": "https://crests.football-data.org/792.svg",
+                "name_pt": "Suécia"
             },
             "score": {
                 "winner": null,
@@ -1961,7 +2187,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_F_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -1996,14 +2227,16 @@
                 "name": "Germany",
                 "shortName": "Germany",
                 "tla": "GER",
-                "crest": "https://crests.football-data.org/759.svg"
+                "crest": "https://crests.football-data.org/759.svg",
+                "name_pt": "Alemanha"
             },
             "awayTeam": {
                 "id": 1935,
                 "name": "Ivory Coast",
                 "shortName": "Ivory Coast",
                 "tla": "CIV",
-                "crest": "https://crests.football-data.org/787.svg"
+                "crest": "https://crests.football-data.org/787.svg",
+                "name_pt": "Costa do Marfim"
             },
             "score": {
                 "winner": null,
@@ -2020,7 +2253,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_E_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2055,14 +2293,16 @@
                 "name": "Ecuador",
                 "shortName": "Ecuador",
                 "tla": "ECU",
-                "crest": "https://crests.football-data.org/791.svg"
+                "crest": "https://crests.football-data.org/791.svg",
+                "name_pt": "Equador"
             },
             "awayTeam": {
                 "id": 9460,
                 "name": "Curaçao",
                 "shortName": "Curaçao",
                 "tla": "CUR",
-                "crest": "https://crests.football-data.org/curacao.svg"
+                "crest": "https://crests.football-data.org/curacao.svg",
+                "name_pt": "Curaçao"
             },
             "score": {
                 "winner": null,
@@ -2079,7 +2319,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_E_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2114,14 +2359,16 @@
                 "name": "Tunisia",
                 "shortName": "Tunisia",
                 "tla": "TUN",
-                "crest": "https://crests.football-data.org/tunisia.svg"
+                "crest": "https://crests.football-data.org/tunisia.svg",
+                "name_pt": "Tunísia"
             },
             "awayTeam": {
                 "id": 766,
                 "name": "Japan",
                 "shortName": "Japan",
                 "tla": "JPN",
-                "crest": "https://crests.football-data.org/766.svg"
+                "crest": "https://crests.football-data.org/766.svg",
+                "name_pt": "Japão"
             },
             "score": {
                 "winner": null,
@@ -2138,7 +2385,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_F_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2173,14 +2425,16 @@
                 "name": "Spain",
                 "shortName": "Spain",
                 "tla": "ESP",
-                "crest": "https://crests.football-data.org/760.svg"
+                "crest": "https://crests.football-data.org/760.svg",
+                "name_pt": "Espanha"
             },
             "awayTeam": {
                 "id": 801,
                 "name": "Saudi Arabia",
                 "shortName": "Saudi Arabia",
                 "tla": "KSA",
-                "crest": "https://crests.football-data.org/saudi_arabia.svg"
+                "crest": "https://crests.football-data.org/saudi_arabia.svg",
+                "name_pt": "Arábia Saudita"
             },
             "score": {
                 "winner": null,
@@ -2197,7 +2451,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_H_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2232,14 +2491,16 @@
                 "name": "Belgium",
                 "shortName": "Belgium",
                 "tla": "BEL",
-                "crest": "https://crests.football-data.org/805.svg"
+                "crest": "https://crests.football-data.org/805.svg",
+                "name_pt": "Bélgica"
             },
             "awayTeam": {
                 "id": 840,
                 "name": "Iran",
                 "shortName": "Iran",
                 "tla": "IRN",
-                "crest": "https://crests.football-data.org/iran.svg"
+                "crest": "https://crests.football-data.org/iran.svg",
+                "name_pt": "Irã"
             },
             "score": {
                 "winner": null,
@@ -2256,7 +2517,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_G_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2291,14 +2557,16 @@
                 "name": "Uruguay",
                 "shortName": "Uruguay",
                 "tla": "URY",
-                "crest": "https://crests.football-data.org/758.svg"
+                "crest": "https://crests.football-data.org/758.svg",
+                "name_pt": "Uruguai"
             },
             "awayTeam": {
                 "id": 1930,
                 "name": "Cape Verde Islands",
                 "shortName": "Cape Verde",
                 "tla": "CPV",
-                "crest": "https://crests.football-data.org/cape_verde.svg"
+                "crest": "https://crests.football-data.org/cape_verde.svg",
+                "name_pt": "Cabo Verde"
             },
             "score": {
                 "winner": null,
@@ -2315,7 +2583,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_H_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2350,14 +2623,16 @@
                 "name": "New Zealand",
                 "shortName": "New Zealand",
                 "tla": "NZL",
-                "crest": "https://crests.football-data.org/783.svg"
+                "crest": "https://crests.football-data.org/783.svg",
+                "name_pt": "Nova Zelândia"
             },
             "awayTeam": {
                 "id": 825,
                 "name": "Egypt",
                 "shortName": "Egypt",
                 "tla": "EGY",
-                "crest": "https://crests.football-data.org/825.svg"
+                "crest": "https://crests.football-data.org/825.svg",
+                "name_pt": "Egito"
             },
             "score": {
                 "winner": null,
@@ -2374,7 +2649,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_G_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2409,14 +2689,16 @@
                 "name": "Argentina",
                 "shortName": "Argentina",
                 "tla": "ARG",
-                "crest": "https://crests.football-data.org/762.png"
+                "crest": "https://crests.football-data.org/762.png",
+                "name_pt": "Argentina"
             },
             "awayTeam": {
                 "id": 816,
                 "name": "Austria",
                 "shortName": "Austria",
                 "tla": "AUT",
-                "crest": "https://crests.football-data.org/816.svg"
+                "crest": "https://crests.football-data.org/816.svg",
+                "name_pt": "Áustria"
             },
             "score": {
                 "winner": null,
@@ -2433,7 +2715,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_J_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2468,14 +2755,16 @@
                 "name": "France",
                 "shortName": "France",
                 "tla": "FRA",
-                "crest": "https://crests.football-data.org/773.svg"
+                "crest": "https://crests.football-data.org/773.svg",
+                "name_pt": "França"
             },
             "awayTeam": {
                 "id": 8062,
                 "name": "Iraq",
                 "shortName": "Iraq",
                 "tla": "IRQ",
-                "crest": "https://crests.football-data.org/iraq.svg"
+                "crest": "https://crests.football-data.org/iraq.svg",
+                "name_pt": "Iraque"
             },
             "score": {
                 "winner": null,
@@ -2492,7 +2781,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_I_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2527,14 +2821,16 @@
                 "name": "Norway",
                 "shortName": "Norway",
                 "tla": "NOR",
-                "crest": "https://crests.football-data.org/813.svg"
+                "crest": "https://crests.football-data.org/813.svg",
+                "name_pt": "Noruega"
             },
             "awayTeam": {
                 "id": 804,
                 "name": "Senegal",
                 "shortName": "Senegal",
                 "tla": "SEN",
-                "crest": "https://crests.football-data.org/senegal.svg"
+                "crest": "https://crests.football-data.org/senegal.svg",
+                "name_pt": "Senegal"
             },
             "score": {
                 "winner": null,
@@ -2551,7 +2847,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_I_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2586,14 +2887,16 @@
                 "name": "Jordan",
                 "shortName": "Jordan",
                 "tla": "JOR",
-                "crest": "https://crests.football-data.org/8049.png"
+                "crest": "https://crests.football-data.org/8049.png",
+                "name_pt": "Jordânia"
             },
             "awayTeam": {
                 "id": 778,
                 "name": "Algeria",
                 "shortName": "Algeria",
                 "tla": "ALG",
-                "crest": "https://crests.football-data.org/algeria.svg"
+                "crest": "https://crests.football-data.org/algeria.svg",
+                "name_pt": "Argélia"
             },
             "score": {
                 "winner": null,
@@ -2610,7 +2913,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_J_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2645,14 +2953,16 @@
                 "name": "Portugal",
                 "shortName": "Portugal",
                 "tla": "POR",
-                "crest": "https://crests.football-data.org/765.svg"
+                "crest": "https://crests.football-data.org/765.svg",
+                "name_pt": "Portugal"
             },
             "awayTeam": {
                 "id": 8070,
                 "name": "Uzbekistan",
                 "shortName": "Uzbekistan",
                 "tla": "UZB",
-                "crest": "https://crests.football-data.org/8070.png"
+                "crest": "https://crests.football-data.org/8070.png",
+                "name_pt": "Uzbequistão"
             },
             "score": {
                 "winner": null,
@@ -2669,7 +2979,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_K_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2704,14 +3019,16 @@
                 "name": "England",
                 "shortName": "England",
                 "tla": "ENG",
-                "crest": "https://crests.football-data.org/770.svg"
+                "crest": "https://crests.football-data.org/770.svg",
+                "name_pt": "Inglaterra"
             },
             "awayTeam": {
                 "id": 763,
                 "name": "Ghana",
                 "shortName": "Ghana",
                 "tla": "GHA",
-                "crest": "https://crests.football-data.org/ghana.svg"
+                "crest": "https://crests.football-data.org/ghana.svg",
+                "name_pt": "Gana"
             },
             "score": {
                 "winner": null,
@@ -2728,7 +3045,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_L_m3",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2763,14 +3085,16 @@
                 "name": "Panama",
                 "shortName": "Panama",
                 "tla": "PAN",
-                "crest": "https://crests.football-data.org/panama.svg"
+                "crest": "https://crests.football-data.org/panama.svg",
+                "name_pt": "Panamá"
             },
             "awayTeam": {
                 "id": 799,
                 "name": "Croatia",
                 "shortName": "Croatia",
                 "tla": "CRO",
-                "crest": "https://crests.football-data.org/799.svg"
+                "crest": "https://crests.football-data.org/799.svg",
+                "name_pt": "Croácia"
             },
             "score": {
                 "winner": null,
@@ -2787,7 +3111,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_L_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2822,14 +3151,16 @@
                 "name": "Colombia",
                 "shortName": "Colombia",
                 "tla": "COL",
-                "crest": "https://crests.football-data.org/818.svg"
+                "crest": "https://crests.football-data.org/818.svg",
+                "name_pt": "Colômbia"
             },
             "awayTeam": {
                 "id": 1934,
                 "name": "Congo DR",
                 "shortName": "Congo DR",
                 "tla": "COD",
-                "crest": "https://crests.football-data.org/congo_dr.svg"
+                "crest": "https://crests.football-data.org/congo_dr.svg",
+                "name_pt": "RD Congo"
             },
             "score": {
                 "winner": null,
@@ -2846,7 +3177,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_K_m4",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2881,14 +3217,16 @@
                 "name": "Switzerland",
                 "shortName": "Switzerland",
                 "tla": "SUI",
-                "crest": "https://crests.football-data.org/788.svg"
+                "crest": "https://crests.football-data.org/788.svg",
+                "name_pt": "Suíça"
             },
             "awayTeam": {
                 "id": 828,
                 "name": "Canada",
                 "shortName": "Canada",
                 "tla": "CAN",
-                "crest": "https://crests.football-data.org/canada.svg"
+                "crest": "https://crests.football-data.org/canada.svg",
+                "name_pt": "Canadá"
             },
             "score": {
                 "winner": null,
@@ -2905,7 +3243,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_B_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -2940,14 +3283,16 @@
                 "name": "Bosnia-Herzegovina",
                 "shortName": "Bosnia-H.",
                 "tla": "BIH",
-                "crest": "https://crests.football-data.org/bosnia.svg"
+                "crest": "https://crests.football-data.org/bosnia.svg",
+                "name_pt": "Bósnia e Herzegovina"
             },
             "awayTeam": {
                 "id": 8030,
                 "name": "Qatar",
                 "shortName": "Qatar",
                 "tla": "QAT",
-                "crest": "https://crests.football-data.org/8030.svg"
+                "crest": "https://crests.football-data.org/8030.svg",
+                "name_pt": "Catar"
             },
             "score": {
                 "winner": null,
@@ -2964,7 +3309,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_B_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -2999,14 +3349,16 @@
                 "name": "Morocco",
                 "shortName": "Morocco",
                 "tla": "MAR",
-                "crest": "https://crests.football-data.org/morocco.svg"
+                "crest": "https://crests.football-data.org/morocco.svg",
+                "name_pt": "Marrocos"
             },
             "awayTeam": {
                 "id": 836,
                 "name": "Haiti",
                 "shortName": "Haiti",
                 "tla": "HAI",
-                "crest": "https://crests.football-data.org/haiti.svg"
+                "crest": "https://crests.football-data.org/haiti.svg",
+                "name_pt": "Haiti"
             },
             "score": {
                 "winner": null,
@@ -3023,7 +3375,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_C_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3058,14 +3415,16 @@
                 "name": "Scotland",
                 "shortName": "Scotland",
                 "tla": "SCO",
-                "crest": "https://crests.football-data.org/814.svg"
+                "crest": "https://crests.football-data.org/814.svg",
+                "name_pt": "Escócia"
             },
             "awayTeam": {
                 "id": 764,
                 "name": "Brazil",
                 "shortName": "Brazil",
                 "tla": "BRA",
-                "crest": "https://crests.football-data.org/764.svg"
+                "crest": "https://crests.football-data.org/764.svg",
+                "name_pt": "Brasil"
             },
             "score": {
                 "winner": null,
@@ -3082,7 +3441,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_C_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3117,14 +3481,16 @@
                 "name": "Czechia",
                 "shortName": "Czechia",
                 "tla": "CZE",
-                "crest": "https://crests.football-data.org/798.svg"
+                "crest": "https://crests.football-data.org/798.svg",
+                "name_pt": "Rep. Tcheca"
             },
             "awayTeam": {
                 "id": 769,
                 "name": "Mexico",
                 "shortName": "Mexico",
                 "tla": "MEX",
-                "crest": "https://crests.football-data.org/769.svg"
+                "crest": "https://crests.football-data.org/769.svg",
+                "name_pt": "México"
             },
             "score": {
                 "winner": null,
@@ -3141,7 +3507,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_A_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3176,14 +3547,16 @@
                 "name": "South Africa",
                 "shortName": "South Africa",
                 "tla": "RSA",
-                "crest": "https://crests.football-data.org/9396.svg"
+                "crest": "https://crests.football-data.org/9396.svg",
+                "name_pt": "África do Sul"
             },
             "awayTeam": {
                 "id": 772,
                 "name": "South Korea",
                 "shortName": "Korea Republic",
                 "tla": "KOR",
-                "crest": "https://crests.football-data.org/772.png"
+                "crest": "https://crests.football-data.org/772.png",
+                "name_pt": "Coreia do Sul"
             },
             "score": {
                 "winner": null,
@@ -3200,7 +3573,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_A_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3235,14 +3613,16 @@
                 "name": "Ecuador",
                 "shortName": "Ecuador",
                 "tla": "ECU",
-                "crest": "https://crests.football-data.org/791.svg"
+                "crest": "https://crests.football-data.org/791.svg",
+                "name_pt": "Equador"
             },
             "awayTeam": {
                 "id": 759,
                 "name": "Germany",
                 "shortName": "Germany",
                 "tla": "GER",
-                "crest": "https://crests.football-data.org/759.svg"
+                "crest": "https://crests.football-data.org/759.svg",
+                "name_pt": "Alemanha"
             },
             "score": {
                 "winner": null,
@@ -3259,7 +3639,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_E_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3294,14 +3679,16 @@
                 "name": "Curaçao",
                 "shortName": "Curaçao",
                 "tla": "CUR",
-                "crest": "https://crests.football-data.org/curacao.svg"
+                "crest": "https://crests.football-data.org/curacao.svg",
+                "name_pt": "Curaçao"
             },
             "awayTeam": {
                 "id": 1935,
                 "name": "Ivory Coast",
                 "shortName": "Ivory Coast",
                 "tla": "CIV",
-                "crest": "https://crests.football-data.org/787.svg"
+                "crest": "https://crests.football-data.org/787.svg",
+                "name_pt": "Costa do Marfim"
             },
             "score": {
                 "winner": null,
@@ -3318,7 +3705,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_E_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3353,14 +3745,16 @@
                 "name": "Tunisia",
                 "shortName": "Tunisia",
                 "tla": "TUN",
-                "crest": "https://crests.football-data.org/tunisia.svg"
+                "crest": "https://crests.football-data.org/tunisia.svg",
+                "name_pt": "Tunísia"
             },
             "awayTeam": {
                 "id": 8601,
                 "name": "Netherlands",
                 "shortName": "Netherlands",
                 "tla": "NED",
-                "crest": "https://crests.football-data.org/8601.svg"
+                "crest": "https://crests.football-data.org/8601.svg",
+                "name_pt": "Holanda"
             },
             "score": {
                 "winner": null,
@@ -3377,7 +3771,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_F_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3412,14 +3811,16 @@
                 "name": "Japan",
                 "shortName": "Japan",
                 "tla": "JPN",
-                "crest": "https://crests.football-data.org/766.svg"
+                "crest": "https://crests.football-data.org/766.svg",
+                "name_pt": "Japão"
             },
             "awayTeam": {
                 "id": 792,
                 "name": "Sweden",
                 "shortName": "Sweden",
                 "tla": "SWE",
-                "crest": "https://crests.football-data.org/792.svg"
+                "crest": "https://crests.football-data.org/792.svg",
+                "name_pt": "Suécia"
             },
             "score": {
                 "winner": null,
@@ -3436,7 +3837,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_F_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3471,14 +3877,16 @@
                 "name": "Turkey",
                 "shortName": "Turkey",
                 "tla": "TUR",
-                "crest": "https://crests.football-data.org/803.svg"
+                "crest": "https://crests.football-data.org/803.svg",
+                "name_pt": "Turquia"
             },
             "awayTeam": {
                 "id": 771,
                 "name": "United States",
                 "shortName": "USA",
                 "tla": "USA",
-                "crest": "https://crests.football-data.org/usa.svg"
+                "crest": "https://crests.football-data.org/usa.svg",
+                "name_pt": "Estados Unidos"
             },
             "score": {
                 "winner": null,
@@ -3495,7 +3903,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_D_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3530,14 +3943,16 @@
                 "name": "Paraguay",
                 "shortName": "Paraguay",
                 "tla": "PAR",
-                "crest": "https://crests.football-data.org/761.svg"
+                "crest": "https://crests.football-data.org/761.svg",
+                "name_pt": "Paraguai"
             },
             "awayTeam": {
                 "id": 779,
                 "name": "Australia",
                 "shortName": "Australia",
                 "tla": "AUS",
-                "crest": "https://crests.football-data.org/779.svg"
+                "crest": "https://crests.football-data.org/779.svg",
+                "name_pt": "Austrália"
             },
             "score": {
                 "winner": null,
@@ -3554,7 +3969,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_D_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3589,14 +4009,16 @@
                 "name": "Norway",
                 "shortName": "Norway",
                 "tla": "NOR",
-                "crest": "https://crests.football-data.org/813.svg"
+                "crest": "https://crests.football-data.org/813.svg",
+                "name_pt": "Noruega"
             },
             "awayTeam": {
                 "id": 773,
                 "name": "France",
                 "shortName": "France",
                 "tla": "FRA",
-                "crest": "https://crests.football-data.org/773.svg"
+                "crest": "https://crests.football-data.org/773.svg",
+                "name_pt": "França"
             },
             "score": {
                 "winner": null,
@@ -3613,7 +4035,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_I_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3648,14 +4075,16 @@
                 "name": "Senegal",
                 "shortName": "Senegal",
                 "tla": "SEN",
-                "crest": "https://crests.football-data.org/senegal.svg"
+                "crest": "https://crests.football-data.org/senegal.svg",
+                "name_pt": "Senegal"
             },
             "awayTeam": {
                 "id": 8062,
                 "name": "Iraq",
                 "shortName": "Iraq",
                 "tla": "IRQ",
-                "crest": "https://crests.football-data.org/iraq.svg"
+                "crest": "https://crests.football-data.org/iraq.svg",
+                "name_pt": "Iraque"
             },
             "score": {
                 "winner": null,
@@ -3672,7 +4101,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_I_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3707,14 +4141,16 @@
                 "name": "Uruguay",
                 "shortName": "Uruguay",
                 "tla": "URY",
-                "crest": "https://crests.football-data.org/758.svg"
+                "crest": "https://crests.football-data.org/758.svg",
+                "name_pt": "Uruguai"
             },
             "awayTeam": {
                 "id": 760,
                 "name": "Spain",
                 "shortName": "Spain",
                 "tla": "ESP",
-                "crest": "https://crests.football-data.org/760.svg"
+                "crest": "https://crests.football-data.org/760.svg",
+                "name_pt": "Espanha"
             },
             "score": {
                 "winner": null,
@@ -3731,7 +4167,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_H_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3766,14 +4207,16 @@
                 "name": "Cape Verde Islands",
                 "shortName": "Cape Verde",
                 "tla": "CPV",
-                "crest": "https://crests.football-data.org/cape_verde.svg"
+                "crest": "https://crests.football-data.org/cape_verde.svg",
+                "name_pt": "Cabo Verde"
             },
             "awayTeam": {
                 "id": 801,
                 "name": "Saudi Arabia",
                 "shortName": "Saudi Arabia",
                 "tla": "KSA",
-                "crest": "https://crests.football-data.org/saudi_arabia.svg"
+                "crest": "https://crests.football-data.org/saudi_arabia.svg",
+                "name_pt": "Arábia Saudita"
             },
             "score": {
                 "winner": null,
@@ -3790,7 +4233,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_H_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3825,14 +4273,16 @@
                 "name": "New Zealand",
                 "shortName": "New Zealand",
                 "tla": "NZL",
-                "crest": "https://crests.football-data.org/783.svg"
+                "crest": "https://crests.football-data.org/783.svg",
+                "name_pt": "Nova Zelândia"
             },
             "awayTeam": {
                 "id": 805,
                 "name": "Belgium",
                 "shortName": "Belgium",
                 "tla": "BEL",
-                "crest": "https://crests.football-data.org/805.svg"
+                "crest": "https://crests.football-data.org/805.svg",
+                "name_pt": "Bélgica"
             },
             "score": {
                 "winner": null,
@@ -3849,7 +4299,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_G_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -3884,14 +4339,16 @@
                 "name": "Egypt",
                 "shortName": "Egypt",
                 "tla": "EGY",
-                "crest": "https://crests.football-data.org/825.svg"
+                "crest": "https://crests.football-data.org/825.svg",
+                "name_pt": "Egito"
             },
             "awayTeam": {
                 "id": 840,
                 "name": "Iran",
                 "shortName": "Iran",
                 "tla": "IRN",
-                "crest": "https://crests.football-data.org/iran.svg"
+                "crest": "https://crests.football-data.org/iran.svg",
+                "name_pt": "Irã"
             },
             "score": {
                 "winner": null,
@@ -3908,7 +4365,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_G_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -3943,14 +4405,16 @@
                 "name": "Panama",
                 "shortName": "Panama",
                 "tla": "PAN",
-                "crest": "https://crests.football-data.org/panama.svg"
+                "crest": "https://crests.football-data.org/panama.svg",
+                "name_pt": "Panamá"
             },
             "awayTeam": {
                 "id": 770,
                 "name": "England",
                 "shortName": "England",
                 "tla": "ENG",
-                "crest": "https://crests.football-data.org/770.svg"
+                "crest": "https://crests.football-data.org/770.svg",
+                "name_pt": "Inglaterra"
             },
             "score": {
                 "winner": null,
@@ -3967,7 +4431,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_L_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -4002,14 +4471,16 @@
                 "name": "Croatia",
                 "shortName": "Croatia",
                 "tla": "CRO",
-                "crest": "https://crests.football-data.org/799.svg"
+                "crest": "https://crests.football-data.org/799.svg",
+                "name_pt": "Croácia"
             },
             "awayTeam": {
                 "id": 763,
                 "name": "Ghana",
                 "shortName": "Ghana",
                 "tla": "GHA",
-                "crest": "https://crests.football-data.org/ghana.svg"
+                "crest": "https://crests.football-data.org/ghana.svg",
+                "name_pt": "Gana"
             },
             "score": {
                 "winner": null,
@@ -4026,7 +4497,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_L_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -4061,14 +4537,16 @@
                 "name": "Colombia",
                 "shortName": "Colombia",
                 "tla": "COL",
-                "crest": "https://crests.football-data.org/818.svg"
+                "crest": "https://crests.football-data.org/818.svg",
+                "name_pt": "Colômbia"
             },
             "awayTeam": {
                 "id": 765,
                 "name": "Portugal",
                 "shortName": "Portugal",
                 "tla": "POR",
-                "crest": "https://crests.football-data.org/765.svg"
+                "crest": "https://crests.football-data.org/765.svg",
+                "name_pt": "Portugal"
             },
             "score": {
                 "winner": null,
@@ -4085,7 +4563,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_K_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -4120,14 +4603,16 @@
                 "name": "Congo DR",
                 "shortName": "Congo DR",
                 "tla": "COD",
-                "crest": "https://crests.football-data.org/congo_dr.svg"
+                "crest": "https://crests.football-data.org/congo_dr.svg",
+                "name_pt": "RD Congo"
             },
             "awayTeam": {
                 "id": 8070,
                 "name": "Uzbekistan",
                 "shortName": "Uzbekistan",
                 "tla": "UZB",
-                "crest": "https://crests.football-data.org/8070.png"
+                "crest": "https://crests.football-data.org/8070.png",
+                "name_pt": "Uzbequistão"
             },
             "score": {
                 "winner": null,
@@ -4144,7 +4629,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_K_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {
@@ -4179,14 +4669,16 @@
                 "name": "Jordan",
                 "shortName": "Jordan",
                 "tla": "JOR",
-                "crest": "https://crests.football-data.org/8049.png"
+                "crest": "https://crests.football-data.org/8049.png",
+                "name_pt": "Jordânia"
             },
             "awayTeam": {
                 "id": 762,
                 "name": "Argentina",
                 "shortName": "Argentina",
                 "tla": "ARG",
-                "crest": "https://crests.football-data.org/762.png"
+                "crest": "https://crests.football-data.org/762.png",
+                "name_pt": "Argentina"
             },
             "score": {
                 "winner": null,
@@ -4203,7 +4695,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_J_m5",
+                "home_is": "t2",
+                "away_is": "t1"
+            }
         },
         {
             "area": {
@@ -4238,14 +4735,16 @@
                 "name": "Algeria",
                 "shortName": "Algeria",
                 "tla": "ALG",
-                "crest": "https://crests.football-data.org/algeria.svg"
+                "crest": "https://crests.football-data.org/algeria.svg",
+                "name_pt": "Argélia"
             },
             "awayTeam": {
                 "id": 816,
                 "name": "Austria",
                 "shortName": "Austria",
                 "tla": "AUT",
-                "crest": "https://crests.football-data.org/816.svg"
+                "crest": "https://crests.football-data.org/816.svg",
+                "name_pt": "Áustria"
             },
             "score": {
                 "winner": null,
@@ -4262,7 +4761,12 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [],
+            "pdf_mapping": {
+                "pdf_id": "Grupo_J_m6",
+                "home_is": "t1",
+                "away_is": "t2"
+            }
         },
         {
             "area": {

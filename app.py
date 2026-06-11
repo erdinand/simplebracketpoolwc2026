@@ -1,11 +1,12 @@
 # streamlit run app.py --server.headless true
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import streamlit as st
 import os
 import pandas as pd
 import requests
 from pypdf import PdfReader
+import base64
 
 # ==========================================
 # 1. SETUP & CONFIGURATION
@@ -13,15 +14,6 @@ from pypdf import PdfReader
 st.set_page_config(page_title="Bolão Copa 2026", page_icon="🏆", layout="centered")
 
 SUBMISSIONS_DIR = "submissions"
-
-# Translation map: (API Home Team, API Away Team) -> Your PDF match prefix
-# Note: Ensure the team names match exactly what the API returns!
-MATCH_MAP = {
-    ("Mexico", "South Africa"): "Grupo_A_m1",
-    ("South Korea", "Czech Republic"): "Grupo_A_m2",
-    ("Mexico", "South Korea"): "Grupo_A_m3",
-    # Add the rest of your matches...
-}
 
 # ==========================================
 # 2. API FETCHING WITH CACHING
@@ -52,26 +44,32 @@ def fetch_live_results():
             
         data = response.json()
 
+        # 1. Load the dynamic map 
+        DYNAMIC_MATCH_MAP = get_dynamic_match_map()
+        
         # 2. Parse the games and map them
         for match in data.get("matches", []):
             home_team = match.get("homeTeam", {}).get("name")
             away_team = match.get("awayTeam", {}).get("name")
             status = match.get("status")
             
-            # 3. Only grab scores if the game is live or finished
-            # Football-Data.org statuses: SCHEDULED, TIMED, IN_PLAY, PAUSED, FINISHED
             if status in ["IN_PLAY", "PAUSED", "FINISHED"]:
-                # The API stores the main score under 'fullTime' (even while live)
                 home_score = match["score"]["fullTime"].get("home")
                 away_score = match["score"]["fullTime"].get("away")
                 
-                # Create a tuple to look up in our map
-                match_pair = (home_team, away_team)
+                # Use the embedded mapping
+                mapping = DYNAMIC_MATCH_MAP.get((home_team, away_team))
                 
-                if match_pair in MATCH_MAP and home_score is not None:
-                    match_prefix = MATCH_MAP[match_pair]
-                    official_results[f"{match_prefix}_t1"] = home_score
-                    official_results[f"{match_prefix}_t2"] = away_score
+                if mapping and home_score is not None:
+                    match_prefix = mapping["pdf_id"]
+                    
+                    # Align the API scores to the Left/Right PDF inputs
+                    if mapping["home_is"] == "t1":
+                        official_results[f"{match_prefix}_t1"] = home_score
+                        official_results[f"{match_prefix}_t2"] = away_score
+                    else:
+                        official_results[f"{match_prefix}_t1"] = away_score
+                        official_results[f"{match_prefix}_t2"] = home_score
                     
         return official_results
         
@@ -105,6 +103,8 @@ def parse_bolao_pdf(pdf_path):
 
 def calculate_points(official_results, user_guesses):
     total_points = 0
+    exact_scores = 0
+    correct_outcomes = 0
     processed_matches = set()
     
     for key in official_results.keys():
@@ -116,23 +116,31 @@ def calculate_points(official_results, user_guesses):
         act_t1, act_t2 = official_results.get(f"{match_base}_t1"), official_results.get(f"{match_base}_t2")
         g_t1, g_t2 = user_guesses.get(f"{match_base}_t1"), user_guesses.get(f"{match_base}_t2")
         
+        # Skip if the match hasn't happened or the user left it blank
         if act_t1 is None or act_t2 is None or g_t1 is None or g_t2 is None:
             continue
             
+        # 3 Points: Exact Score
         if act_t1 == g_t1 and act_t2 == g_t2:
             total_points += 3
+            exact_scores += 1
         else:
+            # 1 Point: Correct Outcome
             actual_outcome = (act_t1 > act_t2) - (act_t1 < act_t2)
             guess_outcome = (g_t1 > g_t2) - (g_t1 < g_t2)
             if actual_outcome == guess_outcome:
                 total_points += 1
+                correct_outcomes += 1
                 
-    return total_points
+    return {
+        "total": total_points,
+        "exact": exact_scores,
+        "correct": correct_outcomes
+    }
 
 def generate_leaderboard(official_results):
     leaderboard_data = []
     
-    # Failsafe: if the folder doesn't exist yet, return an empty dataframe
     if not os.path.exists(SUBMISSIONS_DIR):
         return pd.DataFrame()
         
@@ -140,17 +148,28 @@ def generate_leaderboard(official_results):
         if file_name.endswith(".pdf"):
             full_path = os.path.join(SUBMISSIONS_DIR, file_name)
             participant_data = parse_bolao_pdf(full_path)
-            points = calculate_points(official_results, participant_data["guesses"])
+            
+            # Now we receive a dictionary of stats instead of just an integer
+            pts_data = calculate_points(official_results, participant_data["guesses"])
+            
             leaderboard_data.append({
-                "Name": participant_data["name"],
-                "Total Points": points
+                "Nome": participant_data["name"],
+                "Pontuação Total": pts_data["total"],
+                "Placares Exatos (3 pts)": pts_data["exact"],
+                "Resultados Corretos (1 pt)": pts_data["correct"]
             })
             
     df = pd.DataFrame(leaderboard_data)
     if not df.empty:
-        df = df.sort_values(by="Total Points", ascending=False).reset_index(drop=True)
+        # Sort by Total Points first. If tied, sort by Exact Scores (Tiebreaker!)
+        df = df.sort_values(
+            by=["Pontuação Total", "Placares Exatos (3 pts)"], 
+            ascending=[False, False]
+        ).reset_index(drop=True)
+        
         df.index += 1 
-        df.index.name = "Rank"
+        df.index.name = "Posição"
+        
     return df
 
 def load_matches_from_json(filepath="matches.json"):
@@ -162,47 +181,54 @@ def load_matches_from_json(filepath="matches.json"):
         st.error(f"Could not find {filepath}. Make sure the file is in the same folder as app.py.")
         return []
 
+def get_dynamic_match_map():
+    """Extracts the embedded PDF mappings from the local JSON file"""
+    matches_data = load_matches_from_json("matches.json")
+    mapping = {}
+    for match in matches_data:
+        if "pdf_mapping" in match:
+            home = match.get("homeTeam", {}).get("name")
+            away = match.get("awayTeam", {}).get("name")
+            mapping[(home, away)] = match["pdf_mapping"]
+    return mapping
+
 # ==========================================
 # 4. STREAMLIT USER INTERFACE
 # ==========================================
 st.title("🏆 Bolão da Copa do Mundo 2026")
-st.write("Predictions are locked! Let the games begin. ⚽")
+st.write("Os palpites estão encerrados! Que comecem os jogos. ⚽")
 
 st.divider()
 
-# Create two tabs
-tab_leaderboard, tab_matches = st.tabs(["📊 Live Ranking", "🗓️ All Matches"])
+# Create three tabs
+tab_leaderboard, tab_matches, tab_pdfs = st.tabs(["📊 Classificação ao Vivo", "🗓️ Jogos e Palpites", "📄 PDFs Originais"])
 
 # ------------------------------------------
 # TAB 1: THE LEADERBOARD
 # ------------------------------------------
 with tab_leaderboard:
-    st.subheader("Leaderboard")
+    st.subheader("Tabela de Classificação")
     
-    # 1. Fetch live results from the API (this data is cached for 5 mins)
     live_results = fetch_live_results()
-    
-    # 2. Calculate the leaderboard using the live data
     df_leaderboard = generate_leaderboard(live_results)
     
     if not df_leaderboard.empty:
-        st.dataframe(df_leaderboard, width='stretch')
+        st.dataframe(df_leaderboard, width="stretch")
     else:
-        st.info("No predictions found in the submissions folder, or no games have started yet!")
+        st.info("Nenhum palpite encontrado na pasta de submissões, ou nenhum jogo começou ainda!")
 
 # ------------------------------------------
-# TAB 2: THE MATCHES (With Time-Locked Guesses)
+# TAB 2: THE MATCHES (With Filters & Time-Locked Guesses)
 # ------------------------------------------
 with tab_matches:
-    st.subheader("🗓️ Group Stage Schedule & Player Guesses")
+    st.subheader("🗓️ Tabela da Fase de Grupos")
     
-    # 1. Define the exact reveal deadline (June 11, 2026, 13:00 UTC-3 -> 16:00 UTC)
-    REVEAL_DEADLINE = datetime(2026, 6, 11, 16, 0, 0, tzinfo=timezone.utc)
-    #REVEAL_DEADLINE = datetime(2026, 6, 9, 16, 0, 0, tzinfo=timezone.utc)
-    current_time = datetime.now(timezone.utc)
+    # --- CONFIGURAÇÃO DO BLOQUEIO DE TEMPO ---
+    br_timezone = timezone(timedelta(hours=-3))
+    REVEAL_DEADLINE = datetime(2026, 6, 11, 16, 0, 0, tzinfo=br_timezone)
+    current_time = datetime.now(br_timezone)
     guesses_are_visible = current_time >= REVEAL_DEADLINE
 
-    # 2. Load all participant guesses into memory if the deadline has passed
     all_participant_guesses = []
     if guesses_are_visible and os.path.exists(SUBMISSIONS_DIR):
         for file_name in os.listdir(SUBMISSIONS_DIR):
@@ -210,40 +236,99 @@ with tab_matches:
                 full_path = os.path.join(SUBMISSIONS_DIR, file_name)
                 all_participant_guesses.append(parse_bolao_pdf(full_path))
 
-    # 3. Load and filter matches
+    # Carrega todos os jogos da fase de grupos
     matches_data = load_matches_from_json("matches.json")
-    
-    # Filter out anything that isn't a group stage match
     group_stage_matches = [m for m in matches_data if m.get("stage") == "GROUP_STAGE"]
 
-    if not group_stage_matches:
-        st.info("No group stage matches found.")
-    else:
-        for match in group_stage_matches:
-            group_raw = match.get("group", "Unknown Group")
-            group = group_raw.replace("_", " ")
-            status = match.get("status", "UNKNOWN")
-            
-            # Format Date
-            raw_date = match.get("utcDate")
-            if raw_date:
-                dt = datetime.strptime(raw_date, "%Y-%m-%dT%H:%M:%SZ")
-                date_str = dt.strftime("%b %d, %Y - %H:%M UTC")
-            else:
-                date_str = "TBD"
+    # --- PROCESSAMENTO DOS FILTROS DISPONÍVEIS ---
+    # Coleta dinamicamente todos os grupos, times e datas que existem no JSON
+    lista_grupos = sorted(list(set(m.get("group", "").replace("GROUP_", "GRUPO ") for m in group_stage_matches if m.get("group"))))
+    
+    lista_times = set()
+    lista_datas = set()
 
-            # Teams & Scores
-            home_team = match.get("homeTeam", {}).get("name", "TBD")
-            away_team = match.get("awayTeam", {}).get("name", "TBD")
+    for m in group_stage_matches:
+        # Times (PT-BR se disponível, senão nome original)
+        lista_times.add(m.get("homeTeam", {}).get("name_pt", m.get("homeTeam", {}).get("name", "A Definir")))
+        lista_times.add(m.get("awayTeam", {}).get("name_pt", m.get("awayTeam", {}).get("name", "A Definir")))
+        # Datas (Apenas o dia formatado em UTC-3)
+        raw_date = m.get("utcDate")
+        if raw_date:
+            dt_utc = datetime.strptime(raw_date, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            lista_datas.add(dt_utc.astimezone(br_timezone).strftime("%d/%m/%Y"))
+
+    lista_times = sorted(list(lista_times - {"A Definir"}))
+    lista_datas = sorted(list(lista_datas), key=lambda x: datetime.strptime(x, "%d/%m/%Y"))
+
+    # --- RENDERIZAÇÃO DOS FILTROS NA INDERFACE ---
+    st.markdown("#### 🔍 Filtrar Jogos")
+    f_col1, f_col2, f_col3 = st.columns(3)
+    
+    with f_col1:
+        filtro_grupo = st.selectbox("Por Grupo", ["Todos"] + lista_grupos)
+    with f_col2:
+        filtro_time = st.selectbox("Por Seleção", ["Todos"] + lista_times)
+    with f_col3:
+        filtro_data = st.selectbox("Por Data", ["Todas"] + lista_datas)
+
+    # --- APLICAÇÃO DOS FILTROS NA LISTA DE JOGOS ---
+    filtered_matches = []
+    for match in group_stage_matches:
+        # Prepara as variáveis para validação
+        g_raw = match.get("group", "Grupo Desconhecido").replace("GROUP_", "GRUPO ")
+        h_team = match.get("homeTeam", {}).get("name_pt", match.get("homeTeam", {}).get("name", "A Definir"))
+        a_team = match.get("awayTeam", {}).get("name_pt", match.get("awayTeam", {}).get("name", "A Definir"))
+        
+        m_date = "A Definir"
+        raw_date = match.get("utcDate")
+        if raw_date:
+            dt_utc = datetime.strptime(raw_date, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            m_date = dt_utc.astimezone(br_timezone).strftime("%d/%m/%Y")
+            date_str_completo = dt_utc.astimezone(br_timezone).strftime("%d/%m/%Y - %H:%M")
+        else:
+            date_str_completo = "A Definir"
+
+        # Checa se o jogo passa em todos os filtros selecionados
+        if filtro_grupo != "Todos" and g_raw != filtro_grupo:
+            continue
+        if filtro_time != "Todos" and h_team != filtro_time and a_team != filtro_time:
+            continue
+        if filtro_data != "Todas" and m_date != filtro_data:
+            continue
+            
+        # Se passou, adiciona um dicionário auxiliar com os dados já mastigados
+        match["_custom_date_str"] = date_str_completo
+        match["_custom_group_str"] = g_raw
+        match["_custom_home"] = h_team
+        match["_custom_away"] = a_team
+        filtered_matches.append(match)
+
+    # --- EXIBIÇÃO DOS JOGOS FILTRADOS ---
+    if not filtered_matches:
+        st.warning("Nenhum jogo corresponde aos filtros selecionados.")
+    else:
+        for match in filtered_matches:
+            group = match["_custom_group_str"]
+            date_str = match["_custom_date_str"]
+            home_team = match["_custom_home"]
+            away_team = match["_custom_away"]
+            
+            status = match.get("status", "DESCONHECIDO")
+            status_map = {
+                "TIMED": "Agendado", "SCHEDULED": "Agendado", "IN_PLAY": "Ao Vivo", 
+                "PAUSED": "Intervalo", "FINISHED": "Encerrado"
+            }
+            status_pt = status_map.get(status, status)
+            
             home_crest = match.get("homeTeam", {}).get("crest")
             away_crest = match.get("awayTeam", {}).get("crest")
             
             home_score = match.get("score", {}).get("fullTime", {}).get("home")
             away_score = match.get("score", {}).get("fullTime", {}).get("away")
-            score_text = f"{home_score} x {away_score}" if home_score is not None else "vs"
+            score_text = f"{home_score} x {away_score}" if home_score is not None else "x"
 
-            # Render Match Scoreboard Card
-            st.markdown(f"**{group}** | {date_str} | Status: `{status}`")
+            # Renderiza o placar do jogo
+            st.markdown(f"**{group}** | {date_str} | Status: `{status_pt}`")
             col1, col2, col3 = st.columns([2, 1, 2])
             
             with col1:
@@ -255,34 +340,103 @@ with tab_matches:
                 if away_crest: st.image(away_crest, width=30)
                 st.write(away_team)
 
-            # --- PARTICIPANT GUESSES SECTION ---
-            match_pair = (home_team, away_team)
-            match_prefix = MATCH_MAP.get(match_pair)
+            # --- PALPITES DOS PARTICIPANTES ---
+            mapping = match.get("pdf_mapping")
 
-            if match_prefix:
+            if mapping:
                 if guesses_are_visible:
-                    # Collect everyone's guess for this specific match
                     match_guesses = []
+                    match_prefix = mapping["pdf_id"]
+                    
                     for participant in all_participant_guesses:
                         g_t1 = participant["guesses"].get(f"{match_prefix}_t1")
                         g_t2 = participant["guesses"].get(f"{match_prefix}_t2")
                         
                         if g_t1 is not None and g_t2 is not None:
+                            if mapping["home_is"] == "t1":
+                                guess_home = g_t1
+                                guess_away = g_t2
+                            else:
+                                guess_home = g_t2
+                                guess_away = g_t1
+                                
+                            score_display = f"{guess_home} x {guess_away}"
+                            
+                            pts_indicator = "⏳"
+                            if home_score is not None and away_score is not None:
+                                if guess_home == home_score and guess_away == away_score:
+                                    pts_indicator = "🟢 3 pts"
+                                else:
+                                    actual_outcome = (home_score > away_score) - (home_score < away_score)
+                                    guess_outcome = (guess_home > guess_away) - (guess_home < guess_away)
+                                    if actual_outcome == guess_outcome:
+                                        pts_indicator = "🟡 1 pt"
+                                    else:
+                                        pts_indicator = "🔴 0 pts"
+                                
                             match_guesses.append({
-                                "Participant": participant["name"],
-                                "Prediction": f"{g_t1} x {g_t2}"
+                                "Participante": participant["name"],
+                                "Palpite": score_display,
+                                "Pontos": pts_indicator
                             })
                     
-                    # Display guesses inside a clean expander to save vertical space
-                    with st.expander(f"👁️ View Participant Guesses ({len(match_guesses)})"):
+                    with st.expander(f"👁️ Ver Palpites dos Participantes ({len(match_guesses)})"):
                         if match_guesses:
                             guesses_df = pd.DataFrame(match_guesses)
-                            st.dataframe(guesses_df, width='stretch', hide_index=True)
+                            st.dataframe(guesses_df, width="stretch", hide_index=True)
                         else:
-                            st.caption("No guesses recorded for this match.")
+                            st.caption("Nenhum palpite registrado para este jogo.")
                 else:
-                    st.caption("🔒 *Guesses for this match will unlock on June 11 at 1:00 PM (UTC-3)*")
+                    st.caption("🔒 *Os palpites para este jogo serão liberados no dia 11 de Junho às 13:00*")
             else:
-                st.caption("⚠️ *Match mapping missing in MATCH_MAP dictionary.*")
+                st.caption("⚠️ *Aguardando dados de mapeamento para este jogo.*")
 
             st.divider()
+
+# ------------------------------------------
+# TAB 3: ORIGINAL SUBMISSION PDFS (Safe Native Download)
+# ------------------------------------------
+with tab_pdfs:
+    st.subheader("📄 PDFs Originais Submetidos por cada participante")
+    
+    # 1. Check if the time lock has been released
+    if not guesses_are_visible:
+        st.warning("🔒 **Acesso Bloqueado:** Os PDFs originais com os palpites estarão disponíveis para conferência apenas após o dia **11 de Junho às 13:00 (UTC-3)**.")
+    else:
+        st.write("Clique nos botões abaixo para baixar e abrir a folha de palpites original e oficial de cada participante.")
+
+        st.caption("💡 *Dica: Se os nomes ou títulos mostrarem caracteres estranhos ao abrir o arquivo diretamente no seu navegador de internet, por favor, abra o arquivo baixado usando um leitor de PDF dedicado (como o Adobe Acrobat ou o aplicativo nativo de PDF do seu celular) para visualizá-lo perfeitamente.*")
+        st.divider()
+
+        if not os.path.exists(SUBMISSIONS_DIR):
+            st.info("Nenhuma pasta de submissões encontrada.")
+        else:
+            # List all .pdf files in the folder
+            pdf_files = sorted([f for f in os.listdir(SUBMISSIONS_DIR) if f.endswith(".pdf")])
+
+            if not pdf_files:
+                st.warning("Nenhum arquivo PDF de palpite foi encontrado na pasta.")
+            else:
+                # Organize the buttons into two columns for a clean layout
+                col1, col2 = st.columns(2)
+                
+                for index, pdf_file in enumerate(pdf_files):
+                    nome_limpo = pdf_file.replace(".pdf", "").replace("_", " ")
+                    caminho_completo = os.path.join(SUBMISSIONS_DIR, pdf_file)
+
+                    # Read the raw binary file from your computer (without converting to base64)
+                    with open(caminho_completo, "rb") as f:
+                        pdf_bytes = f.read()
+
+                    # Distribute the buttons between the two columns
+                    col_alvo = col1 if index % 2 == 0 else col2
+                    
+                    with col_alvo:
+                        st.download_button(
+                            label=f"📄 {nome_limpo}",
+                            data=pdf_bytes,
+                            file_name=pdf_file,
+                            mime="application/pdf",
+                            key=f"btn_{pdf_file}", # Unique key essential for loops
+                            use_container_width=True # Makes the buttons full-width and elegant
+                        )
