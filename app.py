@@ -497,7 +497,7 @@ with tab_pdfs:
 st.divider()
 
 # Using an expander keeps the UI clean for normal users
-with st.expander("🛠️ Admin / Área do Desenvolvedor"):
+with st.expander("🛠️ Admin"):
     st.write("Baixe o arquivo de partidas atualizado com os últimos resultados da API.")
     
     try:
