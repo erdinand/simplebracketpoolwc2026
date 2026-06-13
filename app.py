@@ -396,14 +396,14 @@ with tab_matches:
             # Create a responsive, single-line Flexbox container
             match_html = (
                 f'<div style="display: flex; justify-content: flex-start; align-items: center; width: 100%; padding: 10px 0;">'
-                f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 140px;">'
+                f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 150px;">'
                 f'      <span style="font-weight: bold; font-size: 16px; margin-right: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{home_team}</span>'
                 f'      <img src="{home_crest}" width="24" style="border-radius: 4px;">'
                 f'  </div>'
                 f'  <div style="width: 70px; text-align: center; font-weight: bold; font-size: 18px;">'
                 f'      <h4 style="text-align: center; margin-top: 0;">{score_text}</h4>'
                 f'  </div>'
-                f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 140px;">'
+                f'  <div style="display: flex; align-items: center; justify-content: flex-start;">'
                 f'      <img src="{away_crest}" width="24" style="border-radius: 4px; margin-left: 8px;">'
                 f'      <span style="font-weight: bold; font-size: 16px; margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{away_team}</span>'
                 f'  </div>'
