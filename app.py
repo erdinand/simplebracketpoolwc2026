@@ -304,21 +304,13 @@ with tab_matches:
         col1, col2 = st.columns(2)
         
         with col1:
-            # Example Filter 1
-            grupo_selecionado = st.selectbox(
-                "Filtrar por Grupo:", 
-                ["Todos", "Group A", "Group B", "Group C"]
-            )
+            filter_group = st.selectbox("Por Grupo", ["Todos"] + lista_grupos)
             
         with col2:
-            # Example Filter 2
-            status_selecionado = st.selectbox(
-                "Filtrar por Status:", 
-                ["Todos", "Agendado", "Ao Vivo", "Encerrado"]
-            )
+            filter_date = st.selectbox("Por Data", ["Todas"] + lista_datas)
             
         # Example Filter 3 (Full width below the columns)
-        time_selecionado = st.text_input("Buscar por Seleção (ex: Brasil):")
+        filter_team = st.selectbox("Por Seleção", ["Todos"] + lista_times)
     
     #st.markdown("#### 🔍 Filtrar Jogos")
     #f_col1, f_col2, f_col3 = st.columns(3)
@@ -333,7 +325,6 @@ with tab_matches:
     # --- FILTER THE LIST OF MATCHES ---
     filtered_matches = []
     for match in group_stage_matches:
-        # Prepara as variáveis para validação
         g_raw = match.get("group", "Grupo Desconhecido").replace("GROUP_", "GRUPO ")
         h_team = match.get("homeTeam", {}).get("name_pt", match.get("homeTeam", {}).get("name", "A Definir"))
         a_team = match.get("awayTeam", {}).get("name_pt", match.get("awayTeam", {}).get("name", "A Definir"))
@@ -348,11 +339,11 @@ with tab_matches:
             date_str_completo = "A Definir"
 
         # Checa se o jogo passa em todos os filtros selecionados
-        if filtro_grupo != "Todos" and g_raw != filtro_grupo:
+        if filter_group != "Todos" and g_raw != filter_group:
             continue
-        if filtro_time != "Todos" and h_team != filtro_time and a_team != filtro_time:
+        if filter_team != "Todos" and h_team != filter_team and a_team != filter_team:
             continue
-        if filtro_data != "Todas" and m_date != filtro_data:
+        if filter_date != "Todas" and m_date != filter_date:
             continue
             
         # Se passou, adiciona um dicionário auxiliar com os dados já mastigados
