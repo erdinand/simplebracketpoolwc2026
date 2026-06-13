@@ -185,15 +185,15 @@ def generate_leaderboard(official_results):
             leaderboard_data.append({
                 "Nome": get_first_name(participant_data["name"]),
                 "Pontos": pts_data["total"],
-                "Jogos c/ 3 pts": pts_data["exact"],
-                "Jogos c/ 1 pt": pts_data["correct"]
+                "Jogos 3 pts": pts_data["exact"],
+                "Jogos 1 pt": pts_data["correct"]
             })
             
     df = pd.DataFrame(leaderboard_data)
     if not df.empty:
         # Sort by Total Points first. If tied, sort by Exact Scores (Tiebreaker!)
         df = df.sort_values(
-            by=["Pontos", "Jogos c/ 3 pts", "Nome"], 
+            by=["Pontos", "Jogos 3 pts", "Nome"], 
             ascending=[False, False, True]
         ).reset_index(drop=True)
         
