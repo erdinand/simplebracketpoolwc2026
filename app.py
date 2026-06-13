@@ -491,27 +491,27 @@ with tab_pdfs:
                             use_container_width=True # Makes the buttons full-width and elegant
                         )
 
-# ==========================================
-# FOOTER / ADMIN AREA
-# ==========================================
-st.divider()
+    # ==========================================
+    # FOOTER / ADMIN AREA IN TAB 3
+    # ==========================================
+    st.divider()
 
-# Using an expander keeps the UI clean for normal users
-with st.expander("🛠️ Admin"):
-    st.write("Baixe o arquivo de partidas atualizado com os últimos resultados da API.")
-    
-    try:
-        # Open and read the updated JSON file
-        with open("matches.json", "r", encoding="utf-8") as f:
-            json_file_content = f.read()
-            
-        # Create the download button
-        st.download_button(
-            label="📥 Baixar matches.json atualizado",
-            data=json_file_content,
-            file_name="matches.json",
-            mime="application/json",
-            help="Salve este arquivo localmente para fazer o push das atualizações para o GitHub."
-        )
-    except Exception as e:
-        st.error(f"Erro ao carregar o arquivo: {e}")
+    # Using an expander keeps the UI clean for normal users
+    with st.expander("🛠️ Admin"):
+        st.write("Baixe o arquivo de partidas atualizado com os últimos resultados da API.")
+        
+        try:
+            # Open and read the updated JSON file
+            with open("matches.json", "r", encoding="utf-8") as f:
+                json_file_content = f.read()
+                
+            # Create the download button
+            st.download_button(
+                label="📥 Baixar matches.json atualizado",
+                data=json_file_content,
+                file_name="matches.json",
+                mime="application/json",
+                help="Salve este arquivo localmente para fazer o push das atualizações para o GitHub."
+            )
+        except Exception as e:
+            st.error(f"Erro ao carregar o arquivo: {e}")
