@@ -6,7 +6,6 @@ import os
 import pandas as pd
 import requests
 from pypdf import PdfReader
-import base64
 
 # ==========================================
 # 1. SETUP & CONFIGURATION
@@ -18,64 +17,95 @@ SUBMISSIONS_DIR = "submissions"
 # ==========================================
 # 2. API FETCHING WITH CACHING
 # ==========================================
-@st.cache_data(ttl=300)  # Cache the data for 5 minutes (300 seconds)
-def fetch_live_results():
+def sync_api_to_json():
     """
-    Fetches live scores from Football-Data.org and translates them 
-    into your OFFICIAL_RESULTS dictionary format.
+    Reads matches.json. If a match has started but is not FINISHED, 
+    it fetches the specific match ID from the API and updates the local JSON file.
     """
-    official_results = {}
-    
-    # 1. Setup your API Request (Competition 2000 is the FIFA World Cup)
-    url = "https://api.football-data.org/v4/competitions/2000/matches"
-    
-    # Football-Data.org uses 'X-Auth-Token' instead of the RapidAPI headers
-    headers = {
-        "X-Auth-Token": st.secrets["API_TOKEN"]
-    }
+    API_KEY = st.secrets["API_TOKEN"]
+    headers = {"X-Auth-Token": API_KEY}
     
     try:
-        response = requests.get(url, headers=headers)
-        
-        # Failsafe if the API rejects the token
-        if response.status_code != 200:
-            st.error("API Error: Please check your API token.")
-            return {}
-            
-        data = response.json()
+        with open("matches.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        st.error(f"Error loading matches.json: {e}")
+        return
 
-        # 1. Load the dynamic map 
-        DYNAMIC_MATCH_MAP = get_dynamic_match_map()
+    current_time = datetime.now(timezone.utc)
+    json_was_updated = False
+
+    for match in data.get("matches", []):
+        if match.get("stage") != "GROUP_STAGE":
+            continue
+            
+        status = match.get("status")
         
-        # 2. Parse the games and map them
-        for match in data.get("matches", []):
+        # If the match is already completely finished, we don't need to ask the API anymore!
+        if status == "FINISHED":
+            continue 
+
+        raw_date = match.get("utcDate")
+        if raw_date:
+            match_time = datetime.strptime(raw_date, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            
+            # If the current time has passed the match start time
+            if current_time >= match_time:
+                match_id = match.get("id")
+                if not match_id:
+                    continue
+                    
+                try:
+                    # Call the API ONLY for this specific match ID
+                    url = f"https://api.football-data.org/v4/matches/{match_id}"
+                    response = requests.get(url, headers=headers)
+                    
+                    if response.status_code == 200:
+                        live_data = response.json()
+                        
+                        # Update the specific match properties in our local dictionary
+                        match["status"] = live_data.get("status")
+                        match["score"] = live_data.get("score")
+                        json_was_updated = True
+                except Exception as e:
+                    print(f"Failed to fetch match {match_id}: {e}")
+
+    # If any live scores were updated, save them back to the JSON file
+    if json_was_updated:
+        with open("matches.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+
+def fetch_live_results():
+    official_results = {}
+    DYNAMIC_MATCH_MAP = get_dynamic_match_map()
+    
+    # We load it fresh (it might have just been updated by sync_api_to_json)
+    matches_data = load_matches_from_json("matches.json") 
+    
+    for match in matches_data:
+        status = match.get("status")
+        
+        # Extract scores for ongoing or finished matches
+        if status in ["IN_PLAY", "PAUSED", "FINISHED"]:
             home_team = match.get("homeTeam", {}).get("name")
             away_team = match.get("awayTeam", {}).get("name")
-            status = match.get("status")
             
-            if status in ["IN_PLAY", "PAUSED", "FINISHED"]:
-                home_score = match["score"]["fullTime"].get("home")
-                away_score = match["score"]["fullTime"].get("away")
+            home_score = match.get("score", {}).get("fullTime", {}).get("home")
+            away_score = match.get("score", {}).get("fullTime", {}).get("away")
+            
+            mapping = DYNAMIC_MATCH_MAP.get((home_team, away_team))
+            
+            if mapping and home_score is not None:
+                match_prefix = mapping["pdf_id"]
                 
-                # Use the embedded mapping
-                mapping = DYNAMIC_MATCH_MAP.get((home_team, away_team))
-                
-                if mapping and home_score is not None:
-                    match_prefix = mapping["pdf_id"]
+                if mapping["home_is"] == "t1":
+                    official_results[f"{match_prefix}_t1"] = home_score
+                    official_results[f"{match_prefix}_t2"] = away_score
+                else:
+                    official_results[f"{match_prefix}_t1"] = away_score
+                    official_results[f"{match_prefix}_t2"] = home_score
                     
-                    # Align the API scores to the Left/Right PDF inputs
-                    if mapping["home_is"] == "t1":
-                        official_results[f"{match_prefix}_t1"] = home_score
-                        official_results[f"{match_prefix}_t2"] = away_score
-                    else:
-                        official_results[f"{match_prefix}_t1"] = away_score
-                        official_results[f"{match_prefix}_t2"] = home_score
-                    
-        return official_results
-        
-    except Exception as e:
-        st.error(f"Failed to fetch live API data: {e}")
-        return {} # Return empty dict if API fails so the app doesn't crash
+    return official_results
 
 # ==========================================
 # 3. PDF PARSING & SCORING LOGIC
@@ -153,7 +183,7 @@ def generate_leaderboard(official_results):
             pts_data = calculate_points(official_results, participant_data["guesses"])
             
             leaderboard_data.append({
-                "Nome": participant_data["name"],
+                "Nome": get_first_name(participant_data["name"]),
                 "Pontuação Total": pts_data["total"],
                 "Placares Exatos (3 pts)": pts_data["exact"],
                 "Resultados Corretos (1 pt)": pts_data["correct"]
@@ -163,8 +193,8 @@ def generate_leaderboard(official_results):
     if not df.empty:
         # Sort by Total Points first. If tied, sort by Exact Scores (Tiebreaker!)
         df = df.sort_values(
-            by=["Pontuação Total", "Placares Exatos (3 pts)"], 
-            ascending=[False, False]
+            by=["Pontuação Total", "Placares Exatos (3 pts)", "Nome"], 
+            ascending=[False, False, True]
         ).reset_index(drop=True)
         
         df.index += 1 
@@ -192,11 +222,17 @@ def get_dynamic_match_map():
             mapping[(home, away)] = match["pdf_mapping"]
     return mapping
 
+def get_first_name(full_name):
+    return full_name.split()[0].capitalize()
+
 # ==========================================
 # 4. STREAMLIT USER INTERFACE
 # ==========================================
 st.title("🏆 Bolão da Copa do Mundo 2026")
 st.write("Os palpites estão encerrados! Que comecem os jogos. ⚽")
+
+# Synchronize missing/live scores with the API before rendering the UI
+sync_api_to_json()
 
 st.divider()
 
@@ -213,7 +249,9 @@ with tab_leaderboard:
     df_leaderboard = generate_leaderboard(live_results)
     
     if not df_leaderboard.empty:
-        st.dataframe(df_leaderboard, width="stretch")
+        #st.dataframe(df_leaderboard, width="stretch")
+        st.dataframe(df_leaderboard)
+        #st.table(df_leaderboard)
     else:
         st.info("Nenhum palpite encontrado na pasta de submissões, ou nenhum jogo começou ainda!")
 
@@ -314,21 +352,35 @@ with tab_matches:
             away_team = match["_custom_away"]
             
             status = match.get("status", "DESCONHECIDO")
-            status_map = {
-                "TIMED": "Agendado", "SCHEDULED": "Agendado", "IN_PLAY": "Ao Vivo", 
-                "PAUSED": "Intervalo", "FINISHED": "Encerrado"
+
+            # Unified map for translation and color
+            status_config = {
+                "TIMED": {"text": "Agendado", "color": "#1f77b4"},
+                "SCHEDULED": {"text": "Agendado", "color": "#1f77b4"},
+                "IN_PLAY": {"text": "Ao Vivo", "color": "#28a745"},
+                "PAUSED": {"text": "Intervalo", "color": "#ffc107"},
+                "FINISHED": {"text": "Encerrado", "color": "#6c757d"}
             }
-            status_pt = status_map.get(status, status)
+            
+            # Fetch the config safely (fallback to black and original text if unknown)
+            current_config = status_config.get(status, {"text": status, "color": "#000000"})
+            status_pt = current_config["text"]
+            cor_hex = current_config["color"]
             
             home_crest = match.get("homeTeam", {}).get("crest")
             away_crest = match.get("awayTeam", {}).get("crest")
             
             home_score = match.get("score", {}).get("fullTime", {}).get("home")
             away_score = match.get("score", {}).get("fullTime", {}).get("away")
+
             score_text = f"{home_score} x {away_score}" if home_score is not None else "x"
 
-            # Renderiza o placar do jogo
-            st.markdown(f"**{group}** | {date_str} | Status: `{status_pt}`")
+            # Render the match score
+            st.markdown(
+                f"**{group}** | {date_str} | Status: <span style='color: {cor_hex}; font-weight: bold;'>{status_pt}</span>",
+                unsafe_allow_html=True
+            )
+
             col1, col2, col3 = st.columns([2, 1, 2])
             
             with col1:
@@ -375,7 +427,7 @@ with tab_matches:
                                         pts_indicator = "🔴 0 pts"
                                 
                             match_guesses.append({
-                                "Participante": participant["name"],
+                                "Participante": get_first_name(participant["name"]),
                                 "Palpite": score_display,
                                 "Pontos": pts_indicator
                             })
