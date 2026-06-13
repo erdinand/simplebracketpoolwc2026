@@ -403,7 +403,7 @@ with tab_matches:
                 f'  <div style="width: 70px; text-align: center; font-weight: bold; font-size: 18px;">'
                 f'      <h4 style="text-align: center; margin-top: 0;">{score_text}</h4>'
                 f'  </div>'
-                f'  <div style="display: flex; align-items: center; justify-content: flex-start;">'
+                f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 140px;">'
                 f'      <img src="{away_crest}" width="24" style="border-radius: 4px; margin-left: 8px;">'
                 f'      <span style="font-weight: bold; font-size: 16px; margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{away_team}</span>'
                 f'  </div>'
