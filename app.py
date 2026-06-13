@@ -237,7 +237,7 @@ sync_api_to_json()
 st.divider()
 
 # Create three tabs
-tab_leaderboard, tab_matches, tab_pdfs = st.tabs(["📊 Classificação ao Vivo", "🗓️ Jogos e Palpites", "📄 PDFs Originais"])
+tab_leaderboard, tab_matches, tab_pdfs = st.tabs(["📊 Classificação", "🗓️ Jogos e Palpites", "📄 Downloads"])
 
 # ------------------------------------------
 # TAB 1: THE LEADERBOARD
