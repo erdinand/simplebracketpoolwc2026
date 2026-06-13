@@ -184,16 +184,16 @@ def generate_leaderboard(official_results):
             
             leaderboard_data.append({
                 "Nome": get_first_name(participant_data["name"]),
-                "Pontuação Total": pts_data["total"],
-                "Placares Exatos (3 pts)": pts_data["exact"],
-                "Resultados Corretos (1 pt)": pts_data["correct"]
+                "Pontos": pts_data["total"],
+                "Jogos c/ 3 pts": pts_data["exact"],
+                "Jogos c/ 1 pt": pts_data["correct"]
             })
             
     df = pd.DataFrame(leaderboard_data)
     if not df.empty:
         # Sort by Total Points first. If tied, sort by Exact Scores (Tiebreaker!)
         df = df.sort_values(
-            by=["Pontuação Total", "Placares Exatos (3 pts)", "Nome"], 
+            by=["Pontos", "Jogos c/ 3 pts", "Nome"], 
             ascending=[False, False, True]
         ).reset_index(drop=True)
         
@@ -249,9 +249,7 @@ with tab_leaderboard:
     df_leaderboard = generate_leaderboard(live_results)
     
     if not df_leaderboard.empty:
-        #st.dataframe(df_leaderboard, width="stretch")
-        st.dataframe(df_leaderboard)
-        #st.table(df_leaderboard)
+        st.dataframe(df_leaderboard, width="stretch")
     else:
         st.info("Nenhum palpite encontrado na pasta de submissões, ou nenhum jogo começou ainda!")
 
