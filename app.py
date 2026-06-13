@@ -393,39 +393,39 @@ with tab_matches:
                 unsafe_allow_html=True
             )
 
-            # Create a responsive, single-line Flexbox container
-            match_html = (
-                f'<div style="display: flex; justify-content: flex-start; align-items: center; width: 100%; padding: 10px 0;">'
-                f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 150px;">'
-                f'      <span style="font-weight: bold; font-size: 16px; margin-right: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{home_team}</span>'
-                f'      <img src="{home_crest}" width="24" style="border-radius: 4px;">'
-                f'  </div>'
-                f'  <div style="width: 70px; text-align: center; font-weight: bold; font-size: 18px;">'
-                f'      <h4 style="text-align: center; margin-top: 0;">{score_text}</h4>'
-                f'  </div>'
-                f'  <div style="display: flex; align-items: center; justify-content: flex-start;">'
-                f'      <img src="{away_crest}" width="24" style="border-radius: 4px; margin-left: 8px;">'
-                f'      <span style="font-weight: bold; font-size: 16px; margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{away_team}</span>'
-                f'  </div>'
-                f'</div>'
-            )
-            
-            # Render the HTML layout
-            st.markdown(match_html, unsafe_allow_html=True)
-
-
-
-
-            #col1, col2, col3 = st.columns([2, 1, 2])
+            ## Create a responsive, single-line Flexbox container
+            #match_html = (
+            #    f'<div style="display: flex; justify-content: flex-start; align-items: center; width: 100%; padding: 10px 0;">'
+            #    f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 45%;">'
+            #    f'      <span style="font-weight: bold; font-size: 16px; margin-right: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{home_team}</span>'
+            #    f'      <img src="{home_crest}" width="24" style="border-radius: 4px;">'
+            #    f'  </div>'
+            #    f'  <div style="width: 10%; text-align: center; font-weight: bold; font-size: 18px;">'
+            #    f'      <h4 style="text-align: center; margin-top: 0;">{score_text}</h4>'
+            #    f'  </div>'
+            #    f'  <div style="display: flex; align-items: center; justify-content: flex-start; width: 45%;">'
+            #    f'      <img src="{away_crest}" width="24" style="border-radius: 4px; margin-left: 8px;">'
+            #    f'      <span style="font-weight: bold; font-size: 16px; margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{away_team}</span>'
+            #    f'  </div>'
+            #    f'</div>'
+            #)
             #
-            #with col1:
-            #    if home_crest: st.image(home_crest, width=30)
-            #    st.write(home_team)
-            #with col2:
-            #    st.markdown(f"<h4 style='text-align: center; margin-top: 0;'>{score_text}</h4>", unsafe_allow_html=True)
-            #with col3:
-            #    if away_crest: st.image(away_crest, width=30)
-            #    st.write(away_team)
+            ## Render the HTML layout
+            #st.markdown(match_html, unsafe_allow_html=True)
+
+
+
+
+            col1, col2, col3 = st.columns([2, 1, 2])
+            
+            with col1:
+                if home_crest: st.image(home_crest, width=30)
+                st.write(home_team)
+            with col2:
+                st.markdown(f"<h4 style='text-align: center; margin-top: 0;'>{score_text}</h4>", unsafe_allow_html=True)
+            with col3:
+                if away_crest: st.image(away_crest, width=30)
+                st.write(away_team)
 
             # --- PALPITES DOS PARTICIPANTES ---
             mapping = match.get("pdf_mapping")
