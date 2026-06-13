@@ -399,7 +399,7 @@ with tab_matches:
                 if home_crest: st.image(home_crest, width=30)
                 st.write(home_team)
             with col2:
-                st.markdown(f"<h3 style='text-align: center; margin-top: 0;'>{score_text}</h3>", unsafe_allow_html=True)
+                st.markdown(f"<h4 style='text-align: center; margin-top: 0;'>{score_text}</h3>", unsafe_allow_html=True)
             with col3:
                 if away_crest: st.image(away_crest, width=30)
                 st.write(away_team)
