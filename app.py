@@ -296,18 +296,41 @@ with tab_matches:
     lista_times = sorted(list(lista_times - {"A Definir"}))
     lista_datas = sorted(list(lista_datas), key=lambda x: datetime.strptime(x, "%d/%m/%Y"))
 
-    # --- RENDERIZAÇÃO DOS FILTROS NA INDERFACE ---
-    st.markdown("#### 🔍 Filtrar Jogos")
-    f_col1, f_col2, f_col3 = st.columns(3)
+    # --- RENDER THE FILTERS IN THE UI ---
+    with st.expander("🔎 Filtros e Buscas", expanded=False):
+        st.write("Use as opções abaixo para filtrar as partidas:")
+        
+        # Organize filters side-by-side using columns
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Example Filter 1
+            grupo_selecionado = st.selectbox(
+                "Filtrar por Grupo:", 
+                ["Todos", "Group A", "Group B", "Group C"]
+            )
+            
+        with col2:
+            # Example Filter 2
+            status_selecionado = st.selectbox(
+                "Filtrar por Status:", 
+                ["Todos", "Agendado", "Ao Vivo", "Encerrado"]
+            )
+            
+        # Example Filter 3 (Full width below the columns)
+        time_selecionado = st.text_input("Buscar por Seleção (ex: Brasil):")
     
-    with f_col1:
-        filtro_grupo = st.selectbox("Por Grupo", ["Todos"] + lista_grupos)
-    with f_col2:
-        filtro_time = st.selectbox("Por Seleção", ["Todos"] + lista_times)
-    with f_col3:
-        filtro_data = st.selectbox("Por Data", ["Todas"] + lista_datas)
+    #st.markdown("#### 🔍 Filtrar Jogos")
+    #f_col1, f_col2, f_col3 = st.columns(3)
+    #
+    #with f_col1:
+    #    filtro_grupo = st.selectbox("Por Grupo", ["Todos"] + lista_grupos)
+    #with f_col2:
+    #    filtro_time = st.selectbox("Por Seleção", ["Todos"] + lista_times)
+    #with f_col3:
+    #    filtro_data = st.selectbox("Por Data", ["Todas"] + lista_datas)
 
-    # --- APLICAÇÃO DOS FILTROS NA LISTA DE JOGOS ---
+    # --- FILTER THE LIST OF MATCHES ---
     filtered_matches = []
     for match in group_stage_matches:
         # Prepara as variáveis para validação
