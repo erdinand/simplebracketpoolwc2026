@@ -492,10 +492,12 @@ with tab_pdfs:
                         )
 
 # ==========================================
-# ADMIN / BACKUP PANEL (Sidebar)
+# FOOTER / ADMIN AREA
 # ==========================================
-with st.sidebar:
-    st.header("🛠️ Admin / Backup")
+st.divider()
+
+# Using an expander keeps the UI clean for normal users
+with st.expander("🛠️ Admin / Área do Desenvolvedor"):
     st.write("Baixe o arquivo de partidas atualizado com os últimos resultados da API.")
     
     try:
@@ -505,7 +507,7 @@ with st.sidebar:
             
         # Create the download button
         st.download_button(
-            label="📥 Baixar matches.json",
+            label="📥 Baixar matches.json atualizado",
             data=json_file_content,
             file_name="matches.json",
             mime="application/json",
