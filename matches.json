@@ -1557,7 +1557,7 @@
             },
             "id": 537404,
             "utcDate": "2026-06-18T02:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 1,
             "stage": "GROUP_STAGE",
             "group": "GROUP_K",
@@ -1579,15 +1579,15 @@
                 "name_pt": "Colômbia"
             },
             "score": {
-                "winner": null,
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 3
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 1
                 }
             },
             "odds": {
@@ -1623,7 +1623,7 @@
             },
             "id": 537329,
             "utcDate": "2026-06-18T16:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_A",
@@ -1645,15 +1645,15 @@
                 "name_pt": "África do Sul"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 0
                 }
             },
             "odds": {
@@ -1689,7 +1689,7 @@
             },
             "id": 537335,
             "utcDate": "2026-06-18T19:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
@@ -1711,15 +1711,15 @@
                 "name_pt": "Bósnia e Herzegovina"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 4,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
@@ -1755,7 +1755,7 @@
             },
             "id": 537336,
             "utcDate": "2026-06-18T22:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
@@ -1777,15 +1777,15 @@
                 "name_pt": "Catar"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 6,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 0
                 }
             },
             "odds": {
@@ -1821,7 +1821,7 @@
             },
             "id": 537330,
             "utcDate": "2026-06-19T01:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_A",
@@ -1843,15 +1843,15 @@
                 "name_pt": "Coreia do Sul"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
@@ -1887,7 +1887,7 @@
             },
             "id": 537348,
             "utcDate": "2026-06-19T19:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_D",
@@ -1909,15 +1909,15 @@
                 "name_pt": "Austrália"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 0
                 }
             },
             "odds": {
@@ -1953,7 +1953,7 @@
             },
             "id": 537342,
             "utcDate": "2026-06-19T22:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_C",
@@ -1975,15 +1975,15 @@
                 "name_pt": "Marrocos"
             },
             "score": {
-                "winner": null,
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 1
                 }
             },
             "odds": {
@@ -2019,7 +2019,7 @@
             },
             "id": 537341,
             "utcDate": "2026-06-20T00:30:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_C",
@@ -2041,15 +2041,15 @@
                 "name_pt": "Haiti"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 0
                 }
             },
             "odds": {
@@ -2085,7 +2085,7 @@
             },
             "id": 537347,
             "utcDate": "2026-06-20T03:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_D",
@@ -2107,15 +2107,15 @@
                 "name_pt": "Paraguai"
             },
             "score": {
-                "winner": null,
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 1
                 }
             },
             "odds": {
