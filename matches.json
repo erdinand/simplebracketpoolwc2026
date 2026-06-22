@@ -2151,7 +2151,7 @@
             },
             "id": 537359,
             "utcDate": "2026-06-20T17:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_F",
@@ -2173,15 +2173,15 @@
                 "name_pt": "Suécia"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 5,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 0
                 }
             },
             "odds": {
@@ -2217,7 +2217,7 @@
             },
             "id": 537353,
             "utcDate": "2026-06-20T20:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_E",
@@ -2239,15 +2239,15 @@
                 "name_pt": "Costa do Marfim"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 1
                 }
             },
             "odds": {
@@ -2283,7 +2283,7 @@
             },
             "id": 537354,
             "utcDate": "2026-06-21T00:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_E",
@@ -2305,15 +2305,15 @@
                 "name_pt": "Curaçao"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
@@ -2349,7 +2349,7 @@
             },
             "id": 537360,
             "utcDate": "2026-06-21T04:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_F",
@@ -2371,15 +2371,15 @@
                 "name_pt": "Japão"
             },
             "score": {
-                "winner": null,
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 4
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 2
                 }
             },
             "odds": {
@@ -2415,7 +2415,7 @@
             },
             "id": 537371,
             "utcDate": "2026-06-21T16:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_H",
@@ -2437,15 +2437,15 @@
                 "name_pt": "Arábia Saudita"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 4,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 0
                 }
             },
             "odds": {
@@ -2481,7 +2481,7 @@
             },
             "id": 537365,
             "utcDate": "2026-06-21T19:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_G",
@@ -2503,15 +2503,15 @@
                 "name_pt": "Irã"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
@@ -2547,7 +2547,7 @@
             },
             "id": 537372,
             "utcDate": "2026-06-21T22:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_H",
@@ -2569,15 +2569,15 @@
                 "name_pt": "Cabo Verde"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 2
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 1
                 }
             },
             "odds": {
@@ -2613,7 +2613,7 @@
             },
             "id": 537366,
             "utcDate": "2026-06-22T01:00:00Z",
-            "status": "TIMED",
+            "status": "IN_PLAY",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_G",
@@ -2635,15 +2635,15 @@
                 "name_pt": "Egito"
             },
             "score": {
-                "winner": null,
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 3
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 0
                 }
             },
             "odds": {
