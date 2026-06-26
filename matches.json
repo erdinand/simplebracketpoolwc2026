@@ -3867,7 +3867,7 @@
             },
             "id": 537349,
             "utcDate": "2026-06-26T02:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 3,
             "stage": "GROUP_STAGE",
             "group": "GROUP_D",
@@ -3889,15 +3889,15 @@
                 "name_pt": "Estados Unidos"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 2
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 1
                 }
             },
             "odds": {
@@ -3933,7 +3933,7 @@
             },
             "id": 537350,
             "utcDate": "2026-06-26T02:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 3,
             "stage": "GROUP_STAGE",
             "group": "GROUP_D",
@@ -3955,15 +3955,15 @@
                 "name_pt": "Austrália"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
